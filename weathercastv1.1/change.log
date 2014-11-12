@@ -110,14 +110,4 @@ git commit -m "del branch lesson_1.1 and add branch v1.1"
 git push testapp v1.1 
 
 
-
-
- 
-
-
-
-
-
-
-
 --修改远程仓库的名称
