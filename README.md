@@ -80,6 +80,12 @@ git checkout V1 <-> git checkout master (git branch 查看branch版本)
 远程分支
 git push branch V1 (git branch -r 查看远程branch版本)
 
-4修改远程仓库的名称
+5添加仓库代码
+git add .
+问题：The file will have its original line endings in your working directory. warning: LF will be replaced by CRLF in Gemfile.
+解决方法： 
+git config core.autocrlf true
+git commit -m "weathercast main code init"
+git push -u testapp master
 
-
+--修改远程仓库的名称
