@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">weathercast</string>
+    <string name="date">Today,12 Novermber!</string>
+    <string name="max">30℃</string>
+    <string name="min">12℃</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
