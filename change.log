@@ -3,8 +3,6 @@ change.log
 问题1 生成的ssh秘钥找不到
 解决方法：
 在~/.ssh目录下
-ssh-keygen -t rsa -C "winstongit@gmail.com" 
-复制C:\Documents and Settings\Administrator\.ssh中的id_rsa.pub里的key
 
 问题2 Could not open a connection to your authentication agent
 解决方法：
@@ -13,20 +11,11 @@ ssh-add ~/.ssh/id_rsa
 
 问题3 The authenticity of host 'github.com (192.30.252.130)' can't be established.
 解决方法：
-ssh -T git@github.com
-Are you sure you want to continue connecting (yes/no)? yes
-
-git config --global user.name "winstongit"
-git config --global user.email "winstongit@gmail.com"
-
-git init
-git commit -m "sunshine_homework"
 git remote add origin git@github.com:winstongit/Sunshinework.git  //连接远程github项目  
 
 问题4：fatal: remote origin already exists.
 解决方法：
 git remote rm origin
-
 
 问题5：fatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.
 解决方法：
@@ -58,6 +47,16 @@ git branch -d lesson_v1.1
 解决方法：必须先切换到其他分支，再删除lesson_v1.1的分支
 git checkout master
 git branch -d lesson_v1.1
+
+问题11 无法删除含子文件的文件夹
+$ git rm -f *.*
+$ git rm weathercastv1.0 -r -f
+fatal: pathspec 'weathercastv1.0' did not match any files
+解决方法：rm -rf weathercastv1.0
+
+问题12 查看所有log
+git log 
+git status
 ==============================================================================================================================
 关于在github建立仓库的正确完整流程总结：
 1 安装git及添加信息到github的ssh key
@@ -66,16 +65,13 @@ ssh-keygen -t rsa -C "winstongit@gmail.com"
 eval `ssh-agent -s` 
 ssh-add ~/.ssh/id_rsa
 复制id_rsa的内容到https://github.com/settings/ssh
-ssh -T git@github.com
-验证ssh是否成功配置
+ssh -T git@github.com 验证ssh是否成功配置
 
-配置用户信息
+配置用户信息:
 git config --global user.name "winstongit"
 git config --global user.email "winstongit@gmail.com"
 
-
-2 在github服务器建一个空仓库
-
+2 在github服务器上建空仓库
 
 3 克隆仓库，提交代码修改
 git clone https://github.com/winstongit/udacityapp.git udacode
@@ -84,8 +80,6 @@ git remote add uda https://github.com/winstongit/udacityapp.git 	//连接远程仓库
 git config --global credential.helper wincred 			//保存密码，避免每次推送都输账户和密码
 修改代码后执行以下操作
 git add .
-
-
 git commit -m "git add code and commit"  			//提交修改的关键提示 
 git push -u uda master 						//推送到远程服务器端
 
