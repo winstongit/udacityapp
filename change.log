@@ -52,11 +52,20 @@ git branch -d lesson_v1.1
 $ git rm -f *.*
 $ git rm weathercastv1.0 -r -f
 fatal: pathspec 'weathercastv1.0' did not match any files
-解决方法：rm -rf weathercastv1.0
+解决方法：
+rm -rf weathercastv1.0
 
-问题12 查看所有log
-git log 
-git status
+问题12 不清楚代码是否是最新的
+解决方法：
+git log 显示提交的commit记录
+git status 查看代码和服务器的差别
+git diff
+git --help
+
+
+问题13 无法切换分支 error: Your local changes to the following files would be overwritten by checkou t:
+解决方法：
+git checkout -f master
 ==============================================================================================================================
 关于在github建立仓库的正确完整流程总结：
 1 安装git及添加信息到github的ssh key
