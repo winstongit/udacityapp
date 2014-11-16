@@ -62,10 +62,33 @@ git status 查看代码和服务器的差别
 git diff
 git --help
 
-
 问题13 无法切换分支 error: Your local changes to the following files would be overwritten by checkou t:
 解决方法：
 git checkout -f master
+
+问题14，不想提交所做的修改，希望代码复位
+解决方法：
+git reset --hard head^^
+
+问题15，无法开启模拟器
+解决方法：
+c盘空间严重不足,挪到e盘。修改androidstudio\bin\idea.properties
+ idea.config.path=E:/androidlearn/androidstudio/.AndroidStudioBeta/config
+ idea.system.path=E:/androidlearn/androidstudio/.AndroidStudioBeta/system
+ idea.plugins.path=E:/androidlearn/androidstudio/plugins
+ idea.log.path=E:/androidlearn/androidstudio/log
+
+问题16，模拟器太慢，
+解决方法：
+如果使用androud studio没有用apple电脑或者win7会有点吃亏。
+特别是使用模拟器的话没有硬件加速会很慢，最好使用真机调试，减少系统的消耗。
+使用真机仿真。
+adb connect 192.168.1.151
+adb remount
+
+问题17，发现apk不适应手机，坐标错位
+解决方法：
+重新写代码
 ==============================================================================================================================
 关于在github建立仓库的正确完整流程总结：
 1 安装git及添加信息到github的ssh key
