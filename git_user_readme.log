@@ -86,12 +86,15 @@ c盘空间严重不足,挪到e盘。修改androidstudio\bin\idea.properties
 adb connect 192.168.1.151
 adb remount
 
-问题17，发现apk不适应手机，坐标错位
+问题17，无法下载所有分支
+解决方法：没解决，只能单独下载对应的分支？
+
+问题18 无法删除github远程分支，git branch -d -r origin/x1 origin/x2 origin/x3无法删除
 解决方法：
-重新写代码
+github还需要手动删除对应的分支
 ==============================================================================================================================
 关于在github建立仓库的正确完整流程总结：
-1 安装git及添加信息到github的ssh key
+1.安装git及添加信息到github的ssh key
 安装Git-1.9.4-preview20140929.exe
 ssh-keygen -t rsa -C "winstongit@gmail.com" 
 eval `ssh-agent -s` 
@@ -103,38 +106,38 @@ ssh -T git@github.com 验证ssh是否成功配置
 git config --global user.name "winstongit"
 git config --global user.email "winstongit@gmail.com"
 
-2 在github服务器上建空仓库
-
-3 克隆仓库，提交代码修改
+2.在github服务器上建空仓库
+ 
+3.克隆仓库并配置本地关联
 git clone https://github.com/winstongit/udacityapp.git udacode
 cd udacode
-git remote add uda https://github.com/winstongit/udacityapp.git 	//连接远程仓库
+git remote add uda https://github.com/winstongit/udacityapp.git 	
 git config --global credential.helper wincred 			//保存密码，避免每次推送都输账户和密码
-修改代码后执行以下操作
-git add .
-git commit -m "git add code and commit"  			//提交修改的关键提示 
-git push -u uda master 						//推送到远程服务器端
 
+4.拉取远程仓库分支
+多分支仓库不能直接git pull
+git remote 查看几个仓库
+git branch -r查看分支
+git branch -a 查看所有分支
+git fetch origin xxx
+git checkout -b origin origin/master
 
-4 添加分支
-git branch v1.0
-git checkout v1.0 (git branch 查看branch版本，git checkout master切换到主干代码 )
-git push uda v1.0(git branch -r 查看远程branch版本)
+5.添加远程分支
+//git remote add uda https://github.com/winstongit/udacityapp.git 	
+git branch xxx
+git checkout xxx
+git rm -r *
+git add --all .
+git commit -m "this is for test"
+git push -u origin xxx
 
-5添加仓库代码
-git commit -m "weathercast main code init"
-git push -u uda master
+6.删除远程分支
+git remote add uda https://github.com/winstongit/udacityapp.git
+git branch -d -r origin/xxx 
+只能删除本地的远程分支显示，目前还是从github网站删除分支方便.
 
-
-6添加新的代码lesson_v1.1
-git add .
-git branch lesson_v1.1
-git commit -m "xxx"
-git push testapp lesson_v1.1 
-
-7删除远程分支
-git remote add uda git@github.com:winstongit/udacityapp.git
-git branch -d -r origin/lesson_v1.1
+7修改远程远程分支的名称
+git branch -m -r origin/v1.01 origin/v1.02
 
 8添加谷歌分析
 https://www.google.com/analytics/web/provision?et=&authuser=#provision/CreateAccount/
