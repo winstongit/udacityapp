@@ -1,0 +1,22 @@
+problems:
+--------------------------------------------------------------------------------------------
+1 天气预报网站深圳天气的jason查询：
+http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7
+ 
+2 关于android studio的报错查找
+解决方法：看高亮的字体
+at com.weathercast.MyActivity$PlaceholderFragment.onCreateView(MyActivity.java:117)
+
+
+ Files ->Settings-> Editor -> Auto Import
+
+问题17，发现apk不适应手机，坐标错位
+解决方法：重新写代码，避免使用绝对坐标
+
+4 Error:(19, 21) 错误: 对于add(int,ForecastFragment), 找不到合适的方法
+方法 FragmentTransaction.add(Fragment,String)不适用
+(参数不匹配; int无法转换为Fragment)
+方法 FragmentTransaction.add(int,Fragment)不适用
+(参数不匹配; ForecastFragment无法转换为Fragment)
+解决方法：
+getSupportFragmentManager().beginTransaction()改成 getFragmentManager().beginTransaction()
