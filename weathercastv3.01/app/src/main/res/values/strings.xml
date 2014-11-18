@@ -7,4 +7,5 @@
     <string name="min">12℃</string>
     <string name="action_settings">Settings</string>
     <string name="action_refresh" translatable="false">Refresh</string>
+    <string name="hello_world">hello world</string>
 </resources>
