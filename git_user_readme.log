@@ -1,76 +1,74 @@
 change.log
 ==============================================================================================================================
-问题1 生成的ssh秘钥找不到
+问题1.生成的ssh秘钥找不到
 解决方法：
 在~/.ssh目录下
 
-问题2 Could not open a connection to your authentication agent
+问题2.Could not open a connection to your authentication agent
 解决方法：
 eval `ssh-agent -s` 
 ssh-add ~/.ssh/id_rsa
 
-问题3 The authenticity of host 'github.com (192.30.252.130)' can't be established.
-解决方法：
-git remote add origin git@github.com:winstongit/Sunshinework.git  //连接远程github项目  
+问题3.git clone git@github.com:winstongit/Sunshinework.git失败，报错The authenticity of host 'github.com (192.30.252.130)' can't be established.
+解决方法：修改仓库访问方式，ssh改https。
+git@github.com:winstongit/Sunshinework.git为https://github.com/winstongit/Sunshinework.git
 
-问题4：fatal: remote origin already exists.
-解决方法：
-git remote rm origin
-
-问题5：fatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.
+问题4.fatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.
 解决方法：
 github建立对应名称的仓库
+git push -u origin master
 
-$ git push -u origin master
-问题6
-error: src refspec master does not match any.
-error: failed to push some refs to 'https://github.com/winstongit/Sunshinework.git'
+问题5.error: src refspec master does not match any.error: failed to push some refs to 'https://github.com/winstongit/Sunshinework.git'
 解决方法：
-应该是没有添加远程仓库，导致无法推送成功
+没有添加远程仓库，导致无法推送成功
+git remote add origin git@github.com:winstongit/Sunshinework.git //连接远程github项目
 
-问题7：You've successfully authenticated, but GitHub does not provide shell access.
-解决方法：没有关系，这个不影响使用
-
-问题8：
-git push -u git@github.com:winstongit/udacityapp.git master 
-Disconnectd:No Supported authentication menthods
+问题6.fatal: remote origin already exists.
 解决方法：
-修改仓库的地址，改为https://github.com/winstongit/udacityapp.git
+存在多个远程仓库的本地映射，删除远程仓库的本地origin映射
+git remote rm origin
 
-问题9：The file will have its original line endings in your working directory. warning: LF will be replaced by CRLF in Gemfile.
-解决方法： 
+问题7.You've successfully authenticated, but GitHub does not provide shell access.
+The file will have its original line endings in your working directory. warning: LF will be replaced by CRLF in Gemfile.
+解决方法：
+第一个警告没关系，不影响使用
+第二个警告是linux的代码结尾空格符和windows不同，要剔除这个警告使用如下命令
 git config core.autocrlf true
 
-问题10无法删除本地当前分支
+问题8.无法删除本地当前分支
 git branch -d lesson_v1.1
 问题：error: Cannot delete the branch 'lesson_v1.1' which you are currently on
-解决方法：必须先切换到其他分支，再删除lesson_v1.1的分支
+解决方法：
+必须先切换到其他分支，再删除lesson_v1.1的分支
 git checkout master
 git branch -d lesson_v1.1
 
-问题11 无法删除含子文件的文件夹
-$ git rm -f *.*
-$ git rm weathercastv1.0 -r -f
-fatal: pathspec 'weathercastv1.0' did not match any files
+问题9.无法删除带子文件的文件夹fatal: pathspec 'weathercastv1.0' did not match any files
+git rm -r weather2.0 fatal: pathspec 'weathercastv3.02' did not match any files
 解决方法：
+git rm -rf *无法删除文件夹，说明文件夹并没有加入git管理
 rm -rf weathercastv1.0
 
-问题12 不清楚代码是否是最新的
+问题10.查看代码是否是最新版本
 解决方法：
 git log 显示提交的commit记录
 git status 查看代码和服务器的差别
 git diff
 git --help
 
-问题13 无法切换分支 error: Your local changes to the following files would be overwritten by checkou t:
+问题11.无法切换分支 error: Your local changes to the following files would be overwritten by checkou t:
 解决方法：
 git checkout -f master
 
-问题14，不想提交所做的修改，希望代码复位
+问题12.不想提交所在分支的修改，希望分支代码复位
 解决方法：
+这个复位是复位到本地仓库的最原始版本，跟服务器版本可能不同
+git checkout xxx
 git reset --hard head^^
+如不是最新版本则
+git pull
 
-问题15，无法开启模拟器
+问题13.无法开启模拟器
 解决方法：
 c盘空间严重不足,挪到e盘。修改androidstudio\bin\idea.properties
  idea.config.path=E:/androidlearn/androidstudio/.AndroidStudioBeta/config
@@ -78,7 +76,7 @@ c盘空间严重不足,挪到e盘。修改androidstudio\bin\idea.properties
  idea.plugins.path=E:/androidlearn/androidstudio/plugins
  idea.log.path=E:/androidlearn/androidstudio/log
 
-问题16，模拟器太慢，
+问题14.模拟器太慢，
 解决方法：
 如果使用androud studio没有用apple电脑或者win7会有点吃亏。
 特别是使用模拟器的话没有硬件加速会很慢，最好使用真机调试，减少系统的消耗。
@@ -86,12 +84,17 @@ c盘空间严重不足,挪到e盘。修改androidstudio\bin\idea.properties
 adb connect 192.168.1.151
 adb remount
 
-问题17，无法下载所有分支
+问题15.无法下载所有分支
 解决方法：没解决，只能单独下载对应的分支？
 
-问题18 无法删除github远程分支，git branch -d -r origin/x1 origin/x2 origin/x3无法删除
+问题16.无法删除github远程分支，git branch -d -r origin/x1 origin/x2 origin/x3无法删除
 解决方法：
 github还需要手动删除对应的分支
+
+问题17.github对比代码得不到对比结果 
+There isn't anything to compare.gh-pages and v2.00-list-item are entirely different commit histories.
+解决方法：
+低版本在前，高版本在后,并保证是2个分支同1个commit。
 ==============================================================================================================================
 关于在github建立仓库的正确完整流程总结：
 1.安装git及添加信息到github的ssh key
@@ -136,10 +139,18 @@ git remote add uda https://github.com/winstongit/udacityapp.git
 git branch -d -r origin/xxx 
 只能删除本地的远程分支显示，目前还是从github网站删除分支方便.
 
-7修改远程远程分支的名称
+7.修改远程远程分支的名称
 git branch -m -r origin/v1.01 origin/v1.02
 
-8添加谷歌分析
+8.复制的仓库做新库无法比较之前的分支代码
+git log --reverse newrepo
+git log --reverse master
+If you redo your commits on top of the original history, you should then be able to compare the branches. 
+There are several different ways that you can redo your commits, including
+git rebase --onto 
+git cherry-pick
+
+9.添加谷歌分析
 https://www.google.com/analytics/web/provision?et=&authuser=#provision/CreateAccount/
 个人追踪标记 
 UA-56716336-1

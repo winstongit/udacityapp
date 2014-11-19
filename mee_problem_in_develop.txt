@@ -1,22 +1,53 @@
-problems:
+一 problems meet in weather apk:
 --------------------------------------------------------------------------------------------
-1 天气预报网站深圳天气的jason查询：
+1.apk电视显示没问题，手机显示坐标错位
+解决方法：
+重新写代码，避免使用绝对坐标
+
+2.Error:(19, 21) 错误: 对于add(int,ForecastFragment), 找不到合适的方法
+方法 FragmentTransaction.add(Fragment,String)不适用(参数不匹配; int无法转换为Fragment)
+方法 FragmentTransaction.add(int,Fragment)不适用(参数不匹配; ForecastFragment无法转换为Fragment)
+解决方法：
+应该是sdk的版本问题，v4使用getSupportFragmentManager,v7使用getFragmentManager。
+getSupportFragmentManager().beginTransaction()改成 getFragmentManager().beginTransaction()
+
+3.无法显示深圳天气
+天气预报网站深圳天气的jason查询：
 http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7
- 
-2 关于android studio的报错查找
+[ 114.07, 22.55 ] 114072255
+
+
+4.机顶盒谷歌play搜索不到谷歌地图，电脑无法下载谷歌地图apk.
+解决方法一：手机安装谷歌地图，使用360手机助手导出谷歌地图apk。（已验证）
+解决方法二：手机安装谷歌地图，adb pull -s emulator-5554  谷歌地图.apk（没有验证）
+
+5.添加map location后，发现无法加载地图
+解决方法:安装google地图后功能正常。
+
+6.天气有时无显示
+解决方法：
+网络问题？？？？
+
+二 problems meet in weather android studio:
+--------------------------------------------------------------------------------------------
+1.代码不自动补全
+解决方法：
+Files ->Settings-> Editor -> Auto Import
+代码报错时，按alt+enter可以自动修改丢失文件。
+
+2.关于android studio的报错信息的具体函数查找
 解决方法：看高亮的字体
 at com.weathercast.MyActivity$PlaceholderFragment.onCreateView(MyActivity.java:117)
 
-
- Files ->Settings-> Editor -> Auto Import
-
-问题17，发现apk不适应手机，坐标错位
-解决方法：重新写代码，避免使用绝对坐标
-
-4 Error:(19, 21) 错误: 对于add(int,ForecastFragment), 找不到合适的方法
-方法 FragmentTransaction.add(Fragment,String)不适用
-(参数不匹配; int无法转换为Fragment)
-方法 FragmentTransaction.add(int,Fragment)不适用
-(参数不匹配; ForecastFragment无法转换为Fragment)
+3.多个安卓设备连接电脑时，使用命令报错
+adb remount 192.168.1.151:5555 error: more than one device and emulator
 解决方法：
-getSupportFragmentManager().beginTransaction()改成 getFragmentManager().beginTransaction()
+adb -s 192.168.1.151:5555 remount
+
+每日工作进展
+--------------------------------------------------------------------------------------------
+2014/11/19
+1 同步代码3.09 get location from shared prefs
+2 同步代码3.11 add fully functional units setting
+3 同步代码3.12 add map intent from new menu item
+
