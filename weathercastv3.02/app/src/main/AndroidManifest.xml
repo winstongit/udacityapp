@@ -16,6 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/action_settings"
+            android:parentActivityName=".MyActivity">
+            <meta-data
+                android:name="@string/action_settings"
+                android:value=".MyActivity"/>
+        </activity>
     </application>
-
 </manifest>
