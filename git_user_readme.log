@@ -1,131 +1,39 @@
-change.log
-==============================================================================================================================
-ÎÊÌâ1.Éú³ÉµÄsshÃØÔ¿ÕÒ²»µ½
-½â¾ö·½·¨£º
-ÔÚ~/.sshÄ¿Â¼ÏÂ
+ä¸€.å…³äºgit
+ä¸­æ–‡å¸®åŠ©ç½‘ç«™ï¼š
+http://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E7%A1%80-%E5%8F%96%E5%BE%97%E9%A1%B9%E7%9B%AE%E7%9A%84-Git-%E4%BB%93%E5%BA%93
+ç”µå­ä¹¦ï¼š
+https://progit2.s3.amazonaws.com/zh/2014-11-16-d449e/progit-zh.138.pdf
 
-ÎÊÌâ2.Could not open a connection to your authentication agent
-½â¾ö·½·¨£º
-eval `ssh-agent -s` 
-ssh-add ~/.ssh/id_rsa
-
-ÎÊÌâ3.git clone git@github.com:winstongit/Sunshinework.gitÊ§°Ü£¬±¨´íThe authenticity of host 'github.com (192.30.252.130)' can't be established.
-½â¾ö·½·¨£ºĞŞ¸Ä²Ö¿â·ÃÎÊ·½Ê½£¬ssh¸Ähttps¡£
-git@github.com:winstongit/Sunshinework.gitÎªhttps://github.com/winstongit/Sunshinework.git
-
-ÎÊÌâ4.fatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.
-½â¾ö·½·¨£º
-github½¨Á¢¶ÔÓ¦Ãû³ÆµÄ²Ö¿â
-git push -u origin master
-
-ÎÊÌâ5.error: src refspec master does not match any.error: failed to push some refs to 'https://github.com/winstongit/Sunshinework.git'
-½â¾ö·½·¨£º
-Ã»ÓĞÌí¼ÓÔ¶³Ì²Ö¿â£¬µ¼ÖÂÎŞ·¨ÍÆËÍ³É¹¦
-git remote add origin git@github.com:winstongit/Sunshinework.git //Á¬½ÓÔ¶³ÌgithubÏîÄ¿
-
-ÎÊÌâ6.fatal: remote origin already exists.
-½â¾ö·½·¨£º
-´æÔÚ¶à¸öÔ¶³Ì²Ö¿âµÄ±¾µØÓ³Éä£¬É¾³ıÔ¶³Ì²Ö¿âµÄ±¾µØoriginÓ³Éä
-git remote rm origin
-
-ÎÊÌâ7.You've successfully authenticated, but GitHub does not provide shell access.
-The file will have its original line endings in your working directory. warning: LF will be replaced by CRLF in Gemfile.
-½â¾ö·½·¨£º
-µÚÒ»¸ö¾¯¸æÃ»¹ØÏµ£¬²»Ó°ÏìÊ¹ÓÃ
-µÚ¶ş¸ö¾¯¸æÊÇlinuxµÄ´úÂë½áÎ²¿Õ¸ñ·ûºÍwindows²»Í¬£¬ÒªÌŞ³ıÕâ¸ö¾¯¸æÊ¹ÓÃÈçÏÂÃüÁî
-git config core.autocrlf true
-
-ÎÊÌâ8.ÎŞ·¨É¾³ı±¾µØµ±Ç°·ÖÖ§
-git branch -d lesson_v1.1
-ÎÊÌâ£ºerror: Cannot delete the branch 'lesson_v1.1' which you are currently on
-½â¾ö·½·¨£º
-±ØĞëÏÈÇĞ»»µ½ÆäËû·ÖÖ§£¬ÔÙÉ¾³ılesson_v1.1µÄ·ÖÖ§
-git checkout master
-git branch -d lesson_v1.1
-
-ÎÊÌâ9.ÎŞ·¨É¾³ı´ø×ÓÎÄ¼şµÄÎÄ¼ş¼Ğfatal: pathspec 'weathercastv1.0' did not match any files
-git rm -r weather2.0 fatal: pathspec 'weathercastv3.02' did not match any files
-½â¾ö·½·¨£º
-git rm -rf *ÎŞ·¨É¾³ıÎÄ¼ş¼Ğ£¬ËµÃ÷ÎÄ¼ş¼Ğ²¢Ã»ÓĞ¼ÓÈëgit¹ÜÀí
-rm -rf weathercastv1.0
-
-ÎÊÌâ10.²é¿´´úÂëÊÇ·ñÊÇ×îĞÂ°æ±¾
-½â¾ö·½·¨£º
-git log ÏÔÊ¾Ìá½»µÄcommit¼ÇÂ¼
-git status ²é¿´´úÂëºÍ·şÎñÆ÷µÄ²î±ğ
-git diff
-git --help
-
-ÎÊÌâ11.ÎŞ·¨ÇĞ»»·ÖÖ§ error: Your local changes to the following files would be overwritten by checkou t:
-½â¾ö·½·¨£º
-git checkout -f master
-
-ÎÊÌâ12.²»ÏëÌá½»ËùÔÚ·ÖÖ§µÄĞŞ¸Ä£¬Ï£Íû·ÖÖ§´úÂë¸´Î»
-½â¾ö·½·¨£º
-Õâ¸ö¸´Î»ÊÇ¸´Î»µ½±¾µØ²Ö¿âµÄ×îÔ­Ê¼°æ±¾£¬¸ú·şÎñÆ÷°æ±¾¿ÉÄÜ²»Í¬
-git checkout xxx
-git reset --hard head^^
-Èç²»ÊÇ×îĞÂ°æ±¾Ôò
-git pull
-
-ÎÊÌâ13.ÎŞ·¨¿ªÆôÄ£ÄâÆ÷
-½â¾ö·½·¨£º
-cÅÌ¿Õ¼äÑÏÖØ²»×ã,Å²µ½eÅÌ¡£ĞŞ¸Äandroidstudio\bin\idea.properties
- idea.config.path=E:/androidlearn/androidstudio/.AndroidStudioBeta/config
- idea.system.path=E:/androidlearn/androidstudio/.AndroidStudioBeta/system
- idea.plugins.path=E:/androidlearn/androidstudio/plugins
- idea.log.path=E:/androidlearn/androidstudio/log
-
-ÎÊÌâ14.Ä£ÄâÆ÷Ì«Âı£¬
-½â¾ö·½·¨£º
-Èç¹ûÊ¹ÓÃandroud studioÃ»ÓĞÓÃappleµçÄÔ»òÕßwin7»áÓĞµã³Ô¿÷¡£
-ÌØ±ğÊÇÊ¹ÓÃÄ£ÄâÆ÷µÄ»°Ã»ÓĞÓ²¼ş¼ÓËÙ»áºÜÂı£¬×îºÃÊ¹ÓÃÕæ»úµ÷ÊÔ£¬¼õÉÙÏµÍ³µÄÏûºÄ¡£
-Ê¹ÓÃÕæ»ú·ÂÕæ¡£
-adb connect 192.168.1.151
-adb remount
-
-ÎÊÌâ15.ÎŞ·¨ÏÂÔØËùÓĞ·ÖÖ§
-½â¾ö·½·¨£ºÃ»½â¾ö£¬Ö»ÄÜµ¥¶ÀÏÂÔØ¶ÔÓ¦µÄ·ÖÖ§£¿
-
-ÎÊÌâ16.ÎŞ·¨É¾³ıgithubÔ¶³Ì·ÖÖ§£¬git branch -d -r origin/x1 origin/x2 origin/x3ÎŞ·¨É¾³ı
-½â¾ö·½·¨£º
-github»¹ĞèÒªÊÖ¶¯É¾³ı¶ÔÓ¦µÄ·ÖÖ§
-
-ÎÊÌâ17.github¶Ô±È´úÂëµÃ²»µ½¶Ô±È½á¹û 
-There isn't anything to compare.gh-pages and v2.00-list-item are entirely different commit histories.
-½â¾ö·½·¨£º
-µÍ°æ±¾ÔÚÇ°£¬¸ß°æ±¾ÔÚºó,²¢±£Ö¤ÊÇ2¸ö·ÖÖ§Í¬1¸öcommit¡£
-==============================================================================================================================
-¹ØÓÚÔÚgithub½¨Á¢²Ö¿âµÄÕıÈ·ÍêÕûÁ÷³Ì×Ü½á£º
-1.°²×°git¼°Ìí¼ÓĞÅÏ¢µ½githubµÄssh key
-°²×°Git-1.9.4-preview20140929.exe
+äºŒ.åœ¨githubå»ºç«‹ä»“åº“çš„æ­£ç¡®æµç¨‹
+1.å®‰è£…gitåŠæ·»åŠ ä¿¡æ¯åˆ°githubçš„ssh key
+å®‰è£…Git-1.9.4-preview20140929.exe
 ssh-keygen -t rsa -C "winstongit@gmail.com" 
 eval `ssh-agent -s` 
 ssh-add ~/.ssh/id_rsa
-¸´ÖÆid_rsaµÄÄÚÈİµ½https://github.com/settings/ssh
-ssh -T git@github.com ÑéÖ¤sshÊÇ·ñ³É¹¦ÅäÖÃ
+å¤åˆ¶id_rsaçš„å†…å®¹åˆ°https://github.com/settings/ssh
+ssh -T git@github.com éªŒè¯sshæ˜¯å¦æˆåŠŸé…ç½®
 
-ÅäÖÃÓÃ»§ĞÅÏ¢:
+é…ç½®ç”¨æˆ·ä¿¡æ¯:
 git config --global user.name "winstongit"
 git config --global user.email "winstongit@gmail.com"
 
-2.ÔÚgithub·şÎñÆ÷ÉÏ½¨¿Õ²Ö¿â
+2.åœ¨githubæœåŠ¡å™¨ä¸Šå»ºç©ºä»“åº“
  
-3.¿ËÂ¡²Ö¿â²¢ÅäÖÃ±¾µØ¹ØÁª
+3.å…‹éš†ä»“åº“å¹¶é…ç½®æœ¬åœ°å…³è”
 git clone https://github.com/winstongit/udacityapp.git udacode
 cd udacode
 git remote add uda https://github.com/winstongit/udacityapp.git 	
-git config --global credential.helper wincred 			//±£´æÃÜÂë£¬±ÜÃâÃ¿´ÎÍÆËÍ¶¼ÊäÕË»§ºÍÃÜÂë
+git config --global credential.helper wincred 			//ä¿å­˜å¯†ç ï¼Œé¿å…æ¯æ¬¡æ¨é€éƒ½è¾“è´¦æˆ·å’Œå¯†ç 
 
-4.À­È¡Ô¶³Ì²Ö¿â·ÖÖ§
-¶à·ÖÖ§²Ö¿â²»ÄÜÖ±½Ógit pull
-git remote ²é¿´¼¸¸ö²Ö¿â
-git branch -r²é¿´·ÖÖ§
-git branch -a ²é¿´ËùÓĞ·ÖÖ§
+4.æ‹‰å–è¿œç¨‹ä»“åº“åˆ†æ”¯
+å¤šåˆ†æ”¯ä»“åº“ä¸èƒ½ç›´æ¥git pull
+git remote æŸ¥çœ‹å‡ ä¸ªä»“åº“
+git branch -ræŸ¥çœ‹åˆ†æ”¯
+git branch -a æŸ¥çœ‹æ‰€æœ‰åˆ†æ”¯
 git fetch origin xxx
 git checkout -b origin origin/master
 
-5.Ìí¼ÓÔ¶³Ì·ÖÖ§
+5.æ·»åŠ è¿œç¨‹åˆ†æ”¯
 //git remote add uda https://github.com/winstongit/udacityapp.git 	
 git branch xxx
 git checkout xxx
@@ -134,15 +42,15 @@ git add --all .
 git commit -m "this is for test"
 git push -u origin xxx
 
-6.É¾³ıÔ¶³Ì·ÖÖ§
+6.åˆ é™¤è¿œç¨‹åˆ†æ”¯
 git remote add uda https://github.com/winstongit/udacityapp.git
 git branch -d -r origin/xxx 
-Ö»ÄÜÉ¾³ı±¾µØµÄÔ¶³Ì·ÖÖ§ÏÔÊ¾£¬Ä¿Ç°»¹ÊÇ´ÓgithubÍøÕ¾É¾³ı·ÖÖ§·½±ã.
+åªèƒ½åˆ é™¤æœ¬åœ°çš„è¿œç¨‹åˆ†æ”¯æ˜¾ç¤ºï¼Œç›®å‰è¿˜æ˜¯ä»githubç½‘ç«™åˆ é™¤åˆ†æ”¯æ–¹ä¾¿.
 
-7.ĞŞ¸ÄÔ¶³ÌÔ¶³Ì·ÖÖ§µÄÃû³Æ
+7.ä¿®æ”¹è¿œç¨‹è¿œç¨‹åˆ†æ”¯çš„åç§°
 git branch -m -r origin/v1.01 origin/v1.02
 
-8.¸´ÖÆµÄ²Ö¿â×öĞÂ¿âÎŞ·¨±È½ÏÖ®Ç°µÄ·ÖÖ§´úÂë
+8.å¤åˆ¶çš„ä»“åº“åšæ–°åº“æ— æ³•æ¯”è¾ƒä¹‹å‰çš„åˆ†æ”¯ä»£ç 
 git log --reverse newrepo
 git log --reverse master
 If you redo your commits on top of the original history, you should then be able to compare the branches. 
@@ -150,20 +58,99 @@ There are several different ways that you can redo your commits, including
 git rebase --onto 
 git cherry-pick
 
-9.Ìí¼Ó¹È¸è·ÖÎö
-https://www.google.com/analytics/web/provision?et=&authuser=#provision/CreateAccount/
-¸öÈË×·×Ù±ê¼Ç 
-UA-56716336-1
+ä¸‰.ä½¿ç”¨ä¸­é‡åˆ°çš„é—®é¢˜
+é—®é¢˜1.ç”Ÿæˆçš„sshç§˜é’¥æ‰¾ä¸åˆ°
+è§£å†³æ–¹æ³•ï¼š
+åœ¨~/.sshç›®å½•ä¸‹
 
-¸öÈË²©¿Í¹È¸è·ÖÎö´úÂë
+é—®é¢˜2.Could not open a connection to your authentication agent
+è§£å†³æ–¹æ³•ï¼š
+eval `ssh-agent -s` 
+ssh-add ~/.ssh/id_rsa
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+é—®é¢˜3.git clone git@github.com:winstongit/Sunshinework.gitå¤±è´¥ï¼ŒæŠ¥é”™The authenticity of host 'github.com (192.30.252.130)' can't be established.
+è§£å†³æ–¹æ³•ï¼šä¿®æ”¹ä»“åº“è®¿é—®æ–¹å¼ï¼Œsshæ”¹httpsã€‚
+git@github.com:winstongit/Sunshinework.gitä¸ºhttps://github.com/winstongit/Sunshinework.git
 
-  ga('create', 'UA-56716336-1', 'auto');
-  ga('send', 'pageview');
+é—®é¢˜4.fatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.
+è§£å†³æ–¹æ³•ï¼š
+githubå»ºç«‹å¯¹åº”åç§°çš„ä»“åº“
+git push -u origin master
 
-</script>
+é—®é¢˜5.error: src refspec master does not match any.error: failed to push some refs to 'https://github.com/winstongit/Sunshinework.git'
+è§£å†³æ–¹æ³•ï¼š
+æ²¡æœ‰æ·»åŠ è¿œç¨‹ä»“åº“ï¼Œå¯¼è‡´æ— æ³•æ¨é€æˆåŠŸ
+git remote add origin git@github.com:winstongit/Sunshinework.git //è¿æ¥è¿œç¨‹githubé¡¹ç›®
+
+é—®é¢˜6.fatal: remote origin already exists.
+è§£å†³æ–¹æ³•ï¼š
+å­˜åœ¨å¤šä¸ªè¿œç¨‹ä»“åº“çš„æœ¬åœ°æ˜ å°„ï¼Œåˆ é™¤è¿œç¨‹ä»“åº“çš„æœ¬åœ°originæ˜ å°„
+git remote rm origin
+
+é—®é¢˜7.You've successfully authenticated, but GitHub does not provide shell access.
+The file will have its original line endings in your working directory. warning: LF will be replaced by CRLF in Gemfile.
+è§£å†³æ–¹æ³•ï¼š
+ç¬¬ä¸€ä¸ªè­¦å‘Šæ²¡å…³ç³»ï¼Œä¸å½±å“ä½¿ç”¨
+ç¬¬äºŒä¸ªè­¦å‘Šæ˜¯linuxçš„ä»£ç ç»“å°¾ç©ºæ ¼ç¬¦å’Œwindowsä¸åŒï¼Œè¦å‰”é™¤è¿™ä¸ªè­¦å‘Šä½¿ç”¨å¦‚ä¸‹å‘½ä»¤
+git config core.autocrlf true
+
+é—®é¢˜8.æ— æ³•åˆ é™¤æœ¬åœ°å½“å‰åˆ†æ”¯
+git branch -d lesson_v1.1
+é—®é¢˜ï¼šerror: Cannot delete the branch 'lesson_v1.1' which you are currently on
+è§£å†³æ–¹æ³•ï¼š
+å¿…é¡»å…ˆåˆ‡æ¢åˆ°å…¶ä»–åˆ†æ”¯ï¼Œå†åˆ é™¤lesson_v1.1çš„åˆ†æ”¯
+git checkout master
+git branch -d lesson_v1.1
+
+é—®é¢˜9.æ— æ³•åˆ é™¤å¸¦å­æ–‡ä»¶çš„æ–‡ä»¶å¤¹fatal: pathspec 'weathercastv1.0' did not match any files
+git rm -r weather2.0 fatal: pathspec 'weathercastv3.02' did not match any files
+è§£å†³æ–¹æ³•ï¼š
+git rm -rf *æ— æ³•åˆ é™¤æ–‡ä»¶å¤¹ï¼Œè¯´æ˜æ–‡ä»¶å¤¹å¹¶æ²¡æœ‰åŠ å…¥gitç®¡ç†
+rm -rf weathercastv1.0
+
+é—®é¢˜10.æŸ¥çœ‹ä»£ç æ˜¯å¦æ˜¯æœ€æ–°ç‰ˆæœ¬
+è§£å†³æ–¹æ³•ï¼š
+git log æ˜¾ç¤ºæäº¤çš„commitè®°å½•
+git status æŸ¥çœ‹ä»£ç å’ŒæœåŠ¡å™¨çš„å·®åˆ«
+git diff
+git --help
+
+é—®é¢˜11.æ— æ³•åˆ‡æ¢åˆ†æ”¯ error: Your local changes to the following files would be overwritten by checkou t:
+è§£å†³æ–¹æ³•ï¼š
+git checkout -f master
+
+é—®é¢˜12.ä¸æƒ³æäº¤æ‰€åœ¨åˆ†æ”¯çš„ä¿®æ”¹ï¼Œå¸Œæœ›åˆ†æ”¯ä»£ç å¤ä½
+è§£å†³æ–¹æ³•ï¼š
+è¿™ä¸ªå¤ä½æ˜¯å¤ä½åˆ°æœ¬åœ°ä»“åº“çš„æœ€åŸå§‹ç‰ˆæœ¬ï¼Œè·ŸæœåŠ¡å™¨ç‰ˆæœ¬å¯èƒ½ä¸åŒ
+git checkout xxx
+git reset --hard head^^
+å¦‚ä¸æ˜¯æœ€æ–°ç‰ˆæœ¬åˆ™
+git pull
+
+é—®é¢˜13.æ— æ³•å¼€å¯æ¨¡æ‹Ÿå™¨
+è§£å†³æ–¹æ³•ï¼š
+cç›˜ç©ºé—´ä¸¥é‡ä¸è¶³,æŒªåˆ°eç›˜ã€‚ä¿®æ”¹androidstudio\bin\idea.properties
+ idea.config.path=E:/androidlearn/androidstudio/.AndroidStudioBeta/config
+ idea.system.path=E:/androidlearn/androidstudio/.AndroidStudioBeta/system
+ idea.plugins.path=E:/androidlearn/androidstudio/plugins
+ idea.log.path=E:/androidlearn/androidstudio/log
+
+é—®é¢˜14.æ¨¡æ‹Ÿå™¨å¤ªæ…¢ï¼Œ
+è§£å†³æ–¹æ³•ï¼š
+å¦‚æœä½¿ç”¨androud studioæ²¡æœ‰ç”¨appleç”µè„‘æˆ–è€…win7ä¼šæœ‰ç‚¹åƒäºã€‚
+ç‰¹åˆ«æ˜¯ä½¿ç”¨æ¨¡æ‹Ÿå™¨çš„è¯æ²¡æœ‰ç¡¬ä»¶åŠ é€Ÿä¼šå¾ˆæ…¢ï¼Œæœ€å¥½ä½¿ç”¨çœŸæœºè°ƒè¯•ï¼Œå‡å°‘ç³»ç»Ÿçš„æ¶ˆè€—ã€‚
+ä½¿ç”¨çœŸæœºä»¿çœŸã€‚
+adb connect 192.168.1.151
+adb remount
+
+é—®é¢˜15.æ— æ³•ä¸‹è½½æ‰€æœ‰åˆ†æ”¯
+è§£å†³æ–¹æ³•ï¼šæ²¡è§£å†³ï¼Œåªèƒ½å•ç‹¬ä¸‹è½½å¯¹åº”çš„åˆ†æ”¯ï¼Ÿ
+
+é—®é¢˜16.æ— æ³•åˆ é™¤githubè¿œç¨‹åˆ†æ”¯ï¼Œgit branch -d -r origin/x1 origin/x2 origin/x3æ— æ³•åˆ é™¤
+è§£å†³æ–¹æ³•ï¼š
+githubè¿˜éœ€è¦æ‰‹åŠ¨åˆ é™¤å¯¹åº”çš„åˆ†æ”¯
+
+é—®é¢˜17.githubå¯¹æ¯”ä»£ç å¾—ä¸åˆ°å¯¹æ¯”ç»“æœ 
+There isn't anything to compare.gh-pages and v2.00-list-item are entirely different commit histories.
+è§£å†³æ–¹æ³•ï¼š
+ä½ç‰ˆæœ¬åœ¨å‰ï¼Œé«˜ç‰ˆæœ¬åœ¨å,å¹¶ä¿è¯æ˜¯2ä¸ªåˆ†æ”¯åŒ1ä¸ªcommitã€‚
