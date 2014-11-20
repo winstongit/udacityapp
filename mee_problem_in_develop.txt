@@ -91,6 +91,8 @@ Right click on your project, scroll down to Android Tools, and then click on Ren
 
 2)Doubango ：基于3GPP IMS/RCS 并能用于嵌入式和桌面系统的开源框架。
 http://doubango.googlecode.com/svn/doubango-read-only
+OpenVCS 代表开源视频会议服务器，用于管理多点控制单元（MCU）。每个MCU（又名 桥）可以处理多达64个参与者。
+Flash2IMS Adobe&reg;闪存&reg;的SIP/IMS网关。
 
 2apktool反汇编
 android-apktool
