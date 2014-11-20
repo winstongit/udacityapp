@@ -54,10 +54,13 @@ adb -s 192.168.1.151:5555 remount
 2014/11/20
 1 同步代码3.13 add ShareActionProvider to detail fragment menu
 如何正确的创建一个MENU的xml?
-Error:(75, 55) 错误: 找不到符号
-符号:   变量 detail_txt位置: 类 id
-Error:(86, 51) 错误: 找不到符号符号:   变量 action_share
+Error:(75, 55) 错误: 找不到符号 符号:   变量 detail_txt位置: 类 id
+Error:(86, 51) 错误: 找不到符号 符号:   变量 action_share
 位置: 类 idError:(90, 75) 错误: 不兼容的类型: ActionProvider无法转换为ShareActionProvider
 注: E:\androidlearn\code\code_back\weathercastv3.01\app\src\main\java\com\weathercast\SettingsActivity.java使用或覆盖了已过时的 API。
-注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+解决方法：问题是复制代码导致文件路径不对。
+xml中的tools:context修改为对应的窗口。如tools:context=".MyActivity"
+menu/detail.xml的路径有问题，detail_txt名称不对，应该是detail_text.
+menu/detail_fragment.xml的action_setting修改为action_share
+
 
