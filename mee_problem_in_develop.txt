@@ -83,10 +83,16 @@ Right click on your project, scroll down to Android Tools, and then click on Ren
 1.同步代码3.13 add ShareActionProvider to detail fragment menu
 如何正确的创建一个MENU的xml?
 2.过滤amlogic项目测试报告，定好后续工作计划，下周给新软件。
+3.NydusVPN账号到期，使用greenvpn+最新的goagent
+折腾1小时。
 
 后续工作规划
 --------------------------------------------------------------------------------------------
-1.源码研究
+1.网站或图书
+
+http://tools.android.com/tech-docs/new-build-system/user-guide
+
+2.源码研究
 1)VST
 
 2)Doubango ：基于3GPP IMS/RCS 并能用于嵌入式和桌面系统的开源框架。
