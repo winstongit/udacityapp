@@ -1,53 +1,63 @@
-Ò» problems meet in weather apk:
+ä¸€ problems meet in weather apk:
 --------------------------------------------------------------------------------------------
-1.apkµçÊÓÏÔÊ¾Ã»ÎÊÌâ£¬ÊÖ»úÏÔÊ¾×ø±ê´íÎ»
-½â¾ö·½·¨£º
-ÖØĞÂĞ´´úÂë£¬±ÜÃâÊ¹ÓÃ¾ø¶Ô×ø±ê
+1.apkç”µè§†æ˜¾ç¤ºæ²¡é—®é¢˜ï¼Œæ‰‹æœºæ˜¾ç¤ºåæ ‡é”™ä½
+è§£å†³æ–¹æ³•ï¼š
+é‡æ–°å†™ä»£ç ï¼Œé¿å…ä½¿ç”¨ç»å¯¹åæ ‡
 
-2.Error:(19, 21) ´íÎó: ¶ÔÓÚadd(int,ForecastFragment), ÕÒ²»µ½ºÏÊÊµÄ·½·¨
-·½·¨ FragmentTransaction.add(Fragment,String)²»ÊÊÓÃ(²ÎÊı²»Æ¥Åä; intÎŞ·¨×ª»»ÎªFragment)
-·½·¨ FragmentTransaction.add(int,Fragment)²»ÊÊÓÃ(²ÎÊı²»Æ¥Åä; ForecastFragmentÎŞ·¨×ª»»ÎªFragment)
-½â¾ö·½·¨£º
-Ó¦¸ÃÊÇsdkµÄ°æ±¾ÎÊÌâ£¬v4Ê¹ÓÃgetSupportFragmentManager,v7Ê¹ÓÃgetFragmentManager¡£
-getSupportFragmentManager().beginTransaction()¸Ä³É getFragmentManager().beginTransaction()
+2.Error:(19, 21) é”™è¯¯: å¯¹äºadd(int,ForecastFragment), æ‰¾ä¸åˆ°åˆé€‚çš„æ–¹æ³•
+æ–¹æ³• FragmentTransaction.add(Fragment,String)ä¸é€‚ç”¨(å‚æ•°ä¸åŒ¹é…; intæ— æ³•è½¬æ¢ä¸ºFragment)
+æ–¹æ³• FragmentTransaction.add(int,Fragment)ä¸é€‚ç”¨(å‚æ•°ä¸åŒ¹é…; ForecastFragmentæ— æ³•è½¬æ¢ä¸ºFragment)
+è§£å†³æ–¹æ³•ï¼š
+åº”è¯¥æ˜¯sdkçš„ç‰ˆæœ¬é—®é¢˜ï¼Œv4ä½¿ç”¨getSupportFragmentManager,v7ä½¿ç”¨getFragmentManagerã€‚
+getSupportFragmentManager().beginTransaction()æ”¹æˆ getFragmentManager().beginTransaction()
 
-3.ÎŞ·¨ÏÔÊ¾ÉîÛÚÌìÆø
-ÌìÆøÔ¤±¨ÍøÕ¾ÉîÛÚÌìÆøµÄjason²éÑ¯£º
+3.æ— æ³•æ˜¾ç¤ºæ·±åœ³å¤©æ°”
+å¤©æ°”é¢„æŠ¥ç½‘ç«™æ·±åœ³å¤©æ°”çš„jasonæŸ¥è¯¢ï¼š
 http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7
 [ 114.07, 22.55 ] 114072255
 
+4.æœºé¡¶ç›’è°·æ­Œplayæœç´¢ä¸åˆ°è°·æ­Œåœ°å›¾ï¼Œç”µè„‘æ— æ³•ä¸‹è½½è°·æ­Œåœ°å›¾apk.
+è§£å†³æ–¹æ³•ä¸€ï¼šæ‰‹æœºå®‰è£…è°·æ­Œåœ°å›¾ï¼Œä½¿ç”¨360æ‰‹æœºåŠ©æ‰‹å¯¼å‡ºè°·æ­Œåœ°å›¾apkã€‚ï¼ˆå·²éªŒè¯ï¼‰
+è§£å†³æ–¹æ³•äºŒï¼šæ‰‹æœºå®‰è£…è°·æ­Œåœ°å›¾ï¼Œadb pull -s emulator-5554  è°·æ­Œåœ°å›¾.apkï¼ˆæ²¡æœ‰éªŒè¯ï¼‰
 
-4.»ú¶¥ºĞ¹È¸èplayËÑË÷²»µ½¹È¸èµØÍ¼£¬µçÄÔÎŞ·¨ÏÂÔØ¹È¸èµØÍ¼apk.
-½â¾ö·½·¨Ò»£ºÊÖ»ú°²×°¹È¸èµØÍ¼£¬Ê¹ÓÃ360ÊÖ»úÖúÊÖµ¼³ö¹È¸èµØÍ¼apk¡££¨ÒÑÑéÖ¤£©
-½â¾ö·½·¨¶ş£ºÊÖ»ú°²×°¹È¸èµØÍ¼£¬adb pull -s emulator-5554  ¹È¸èµØÍ¼.apk£¨Ã»ÓĞÑéÖ¤£©
+5.æ·»åŠ map locationåï¼Œå‘ç°æ— æ³•åŠ è½½åœ°å›¾
+è§£å†³æ–¹æ³•:å®‰è£…googleåœ°å›¾åå¯ä»¥æ˜¾ç¤ºåœ°å›¾ï¼Œä½†æ˜¯æ— æ³•æ­£å¸¸å®šä½åŸå¸‚åæ ‡ã€‚
+åˆ¤æ–­ä¸èƒ½å‡†ç¡®å®šä½åæ ‡çš„åŸå› æ˜¯è°·æ­Œåœ°å›¾éœ€è¦ç¿»å¢™ä½¿ç”¨ã€‚
 
-5.Ìí¼Ómap locationºó£¬·¢ÏÖÎŞ·¨¼ÓÔØµØÍ¼
-½â¾ö·½·¨:°²×°googleµØÍ¼ºó¹¦ÄÜÕı³£¡£
+6.å¤©æ°”æœ‰æ—¶æ— æ˜¾ç¤º
+è§£å†³æ–¹æ³•ï¼š
+ç½‘ç»œé—®é¢˜ï¼Ÿï¼Ÿï¼Ÿï¼Ÿ
 
-6.ÌìÆøÓĞÊ±ÎŞÏÔÊ¾
-½â¾ö·½·¨£º
-ÍøÂçÎÊÌâ£¿£¿£¿£¿
-
-¶ş problems meet in weather android studio:
+äºŒ problems meet in weather android studio:
 --------------------------------------------------------------------------------------------
-1.´úÂë²»×Ô¶¯²¹È«
-½â¾ö·½·¨£º
+1.ä»£ç ä¸è‡ªåŠ¨è¡¥å…¨
+è§£å†³æ–¹æ³•ï¼š
 Files ->Settings-> Editor -> Auto Import
-´úÂë±¨´íÊ±£¬°´alt+enter¿ÉÒÔ×Ô¶¯ĞŞ¸Ä¶ªÊ§ÎÄ¼ş¡£
+ä»£ç æŠ¥é”™æ—¶ï¼ŒæŒ‰alt+enterå¯ä»¥è‡ªåŠ¨ä¿®æ”¹ä¸¢å¤±æ–‡ä»¶ã€‚
 
-2.¹ØÓÚandroid studioµÄ±¨´íĞÅÏ¢µÄ¾ßÌåº¯Êı²éÕÒ
-½â¾ö·½·¨£º¿´¸ßÁÁµÄ×ÖÌå
+2.å…³äºandroid studioçš„æŠ¥é”™ä¿¡æ¯çš„å…·ä½“å‡½æ•°æŸ¥æ‰¾
+è§£å†³æ–¹æ³•ï¼šçœ‹é«˜äº®çš„å­—ä½“
 at com.weathercast.MyActivity$PlaceholderFragment.onCreateView(MyActivity.java:117)
 
-3.¶à¸ö°²×¿Éè±¸Á¬½ÓµçÄÔÊ±£¬Ê¹ÓÃÃüÁî±¨´í
+3.å¤šä¸ªå®‰å“è®¾å¤‡è¿æ¥ç”µè„‘æ—¶ï¼Œä½¿ç”¨å‘½ä»¤æŠ¥é”™
 adb remount 192.168.1.151:5555 error: more than one device and emulator
-½â¾ö·½·¨£º
+è§£å†³æ–¹æ³•ï¼š
 adb -s 192.168.1.151:5555 remount
 
-Ã¿ÈÕ¹¤×÷½øÕ¹
+æ¯æ—¥å·¥ä½œè¿›å±•
 --------------------------------------------------------------------------------------------
 2014/11/19
-1 Í¬²½´úÂë3.09 get location from shared prefs
-2 Í¬²½´úÂë3.11 add fully functional units setting
-3 Í¬²½´úÂë3.12 add map intent from new menu item
+1 åŒæ­¥ä»£ç 3.09 get location from shared prefs
+2 åŒæ­¥ä»£ç 3.11 add fully functional units setting
+3 åŒæ­¥ä»£ç 3.12 add map intent from new menu item
+
+2014/11/20
+1 åŒæ­¥ä»£ç 3.13 add ShareActionProvider to detail fragment menu
+å¦‚ä½•æ­£ç¡®çš„åˆ›å»ºä¸€ä¸ªMENUçš„xml?
+Error:(75, 55) é”™è¯¯: æ‰¾ä¸åˆ°ç¬¦å·
+ç¬¦å·:   å˜é‡ detail_txtä½ç½®: ç±» id
+Error:(86, 51) é”™è¯¯: æ‰¾ä¸åˆ°ç¬¦å·ç¬¦å·:   å˜é‡ action_share
+ä½ç½®: ç±» idError:(90, 75) é”™è¯¯: ä¸å…¼å®¹çš„ç±»å‹: ActionProvideræ— æ³•è½¬æ¢ä¸ºShareActionProvider
+æ³¨: E:\androidlearn\code\code_back\weathercastv3.01\app\src\main\java\com\weathercast\SettingsActivity.javaä½¿ç”¨æˆ–è¦†ç›–äº†å·²è¿‡æ—¶çš„ APIã€‚
+æ³¨: æœ‰å…³è¯¦ç»†ä¿¡æ¯, è¯·ä½¿ç”¨ -Xlint:deprecation é‡æ–°ç¼–è¯‘ã€‚
 
