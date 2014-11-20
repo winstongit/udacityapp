@@ -1,5 +1,6 @@
-一 problems meet in weather apk:
+一 weather apk
 --------------------------------------------------------------------------------------------
+problems meet in weather apk:
 1.apk电视显示没问题，手机显示坐标错位
 解决方法：
 重新写代码，避免使用绝对坐标
@@ -28,8 +29,20 @@ http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=me
 解决方法：
 网络问题？？？？
 
-二 problems meet in weather android studio:
+7.Error:(75, 55) 错误: 找不到符号 符号:   变量 detail_txt位置: 类 id
+Error:(86, 51) 错误: 找不到符号 符号:   变量 action_share
+位置: 类 idError:(90, 75) 错误: 不兼容的类型: ActionProvider无法转换为ShareActionProvider
+注: E:\androidlearn\code\code_back\weathercastv3.01\app\src\main\java\com\weathercast\SettingsActivity.java使用或覆盖了已过时的 API。
+解决方法：问题是复制代码导致文件路径不对。
+xml中的tools:context修改为对应的窗口。如tools:context=".MyActivity"
+menu/detail.xml的路径有问题，detail_txt名称不对，应该是detail_text.
+menu/detail_fragment.xml的action_setting修改为action_share
+
+
+二 android studio
 --------------------------------------------------------------------------------------------
+学习的基本配置文档，搞好各种参数的基本配置，熟练使用。
+problems meet in weather android studio:
 1.代码不自动补全
 解决方法：
 Files ->Settings-> Editor -> Auto Import
@@ -44,23 +57,47 @@ adb remount 192.168.1.151:5555 error: more than one device and emulator
 解决方法：
 adb -s 192.168.1.151:5555 remount
 
+4.修改工程的包名称
+Right-click on the package name (src/com.android.gesture.builder).
+Select Refactor > Rename and change the name, for example to com.android.gestureNEW.builder.
+Open the manifest file. Inside the  <manifest> tag, change the package name to com.android.gestureNEW.builder.
+Open each of the two Activity files and do Ctrl-Shift-O to add missing import packages, then save each file. Run the GestureBuilder application on the emulator.
+Right click on your project, scroll down to Android Tools, and then click on Rename Application Package.
+
+5.常用注释
+<!--注释-->
+
+6.How to auto format code in eclipse?
+把鼠标箭头移到出错误的layout上 点击鼠标右键选择Source然后再选Format 
+
+8.修改在AndroidManifest.xml中有个主activity的标签 里面那个label属性  修改运行就好
+
 每日工作进展
 --------------------------------------------------------------------------------------------
 2014/11/19
-1 同步代码3.09 get location from shared prefs
-2 同步代码3.11 add fully functional units setting
-3 同步代码3.12 add map intent from new menu item
+1.同步代码3.09 get location from shared prefs
+2.同步代码3.11 add fully functional units setting
+3.同步代码3.12 add map intent from new menu item
 
 2014/11/20
-1 同步代码3.13 add ShareActionProvider to detail fragment menu
+1.同步代码3.13 add ShareActionProvider to detail fragment menu
 如何正确的创建一个MENU的xml?
-Error:(75, 55) 错误: 找不到符号 符号:   变量 detail_txt位置: 类 id
-Error:(86, 51) 错误: 找不到符号 符号:   变量 action_share
-位置: 类 idError:(90, 75) 错误: 不兼容的类型: ActionProvider无法转换为ShareActionProvider
-注: E:\androidlearn\code\code_back\weathercastv3.01\app\src\main\java\com\weathercast\SettingsActivity.java使用或覆盖了已过时的 API。
-解决方法：问题是复制代码导致文件路径不对。
-xml中的tools:context修改为对应的窗口。如tools:context=".MyActivity"
-menu/detail.xml的路径有问题，detail_txt名称不对，应该是detail_text.
-menu/detail_fragment.xml的action_setting修改为action_share
+2.过滤amlogic项目测试报告，定好后续工作计划，下周给新软件。
 
+后续工作规划
+--------------------------------------------------------------------------------------------
+1.源码研究
+1)VST
 
+2)Doubango ：基于3GPP IMS/RCS 并能用于嵌入式和桌面系统的开源框架。
+http://doubango.googlecode.com/svn/doubango-read-only
+
+2apktool反汇编
+android-apktool
+Windows:
+Download Windows wrapper script (Right click, Save Link As apktool.bat)
+Download apktool-2 (find newest here)
+Rename downloaded jar to apktool.jar
+Move both files (apktool.jar & apktool.bat) to your Windows directory (Usually C://Windows)
+If you do not have access to C://Windows, you may place the two files anywhere then add that directory to your Environment Variables System PATH variable.
+Try running apktool via command prompt
