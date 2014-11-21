@@ -46,7 +46,13 @@ android.support.v7.widget.ShareActionProvider mShareActionProvider;
 mShareActionProvider = (android.support.v7.widget.ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
 detailfragment.xml中添加
 app:actionProviderClass="android.support.v7.widget.ShareActionProvider" 
-编译可以，
+
+9.问题
+Error:(19, 9) 错误: 无法将类 Object中的构造器 Object应用到给定类型;
+需要: 没有参数
+找到: Context,String,<空值>,int
+原因: 实际参数列表和形式参数列表长度不同
+解决方法：public class WeatherDbHelper修改为public class WeatherDbHelper extends SQLiteOpenHelper
 
 二.android studio
 --------------------------------------------------------------------------------------------
