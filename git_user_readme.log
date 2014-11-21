@@ -58,6 +58,11 @@ There are several different ways that you can redo your commits, including
 git rebase --onto 
 git cherry-pick
 
+9.github代码对比 
+低版本在前，高版本在后,并保证是2个分支是同1个commit。
+否则会出现There isn't anything to compare.gh-pages and v2.00-list-item are entirely different commit histories.
+
+
 三.使用中遇到的问题
 问题1.生成的ssh秘钥找不到
 解决方法：
@@ -137,9 +142,8 @@ c盘空间严重不足,挪到e盘。修改androidstudio\bin\idea.properties
 
 问题14.模拟器太慢，
 解决方法：
-如果使用androud studio没有用apple电脑或者win7会有点吃亏。
-特别是使用模拟器的话没有硬件加速会很慢，最好使用真机调试，减少系统的消耗。
-使用真机仿真。
+如果使用androud studio没有用apple电脑或者win7会有点吃亏。特别是使用模拟器的话没有硬件加速会很慢，最好使用真机调试，减少系统的消耗。
+使用真机仿真。最新的模拟器插件是genymotion。功能很全，没测试过。
 adb connect 192.168.1.151
 adb remount
 
@@ -149,8 +153,3 @@ adb remount
 问题16.无法删除github远程分支，git branch -d -r origin/x1 origin/x2 origin/x3无法删除
 解决方法：
 github还需要手动删除对应的分支
-
-问题17.github对比代码得不到对比结果 
-There isn't anything to compare.gh-pages and v2.00-list-item are entirely different commit histories.
-解决方法：
-低版本在前，高版本在后,并保证是2个分支同1个commit。
