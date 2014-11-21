@@ -93,7 +93,15 @@ Right click on your project, scroll down to Android Tools, and then click on Ren
 如何正确的创建一个MENU的xml?
 2.过滤amlogic项目测试报告，定好后续工作计划，下周给新软件。
 3.NydusVPN账号到期，使用greenvpn+最新的goagent
+
 折腾1小时。
+2014/11/21
+1.同步代码4.3 Our First Table - add contract for weather table
+建立数据库接口表
+2.同步代码4.5 About that Database... - create db helper
+
+
+2.android studiov1.0rc今天下载，务必使用最新版本。
 
 四.工作规划
 --------------------------------------------------------------------------------------------
