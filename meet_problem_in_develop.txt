@@ -103,6 +103,21 @@ adb nodaemon server
 netstat -ano | findstr "5037"
 tskill 4236
 
+
+12.Error:The project is using an unsupported version of the Android Gradle plug-in (0.12.2). The recommended version is 0.14.4.
+<a href="fixGradleElements">Fix plugin version and re-import project</a>
+解决方法：使用vpn修复此问题
+
+13.Error running app: Gradle project sync failed. Please fix your project and try again.
+解决方法：使用vpn修复此问题
+
+14.app图标无法打开，程序编译报错如下
+Error:(16, 0) Gradle DSL method not found: 'runProguard()'
+Possible causes:<ul><li>The project 'weathercastv3.01' may be using a version of Gradle that does not contain the method.
+<a href="openGradleSettings">Gradle settings</a></li><li>The build file may be missing a Gradle plugin.
+<a href="apply.gradle.plugin">Apply Gradle plugin</a></li>
+解决方法：app/build.grade runProguard 改成 minifyEnabled，再按同步就可以了。
+
 三.工作进展
 --------------------------------------------------------------------------------------------
 2014/11/19
