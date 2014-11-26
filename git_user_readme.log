@@ -124,13 +124,11 @@ git --help
 解决方法：
 git checkout -f master
 
-问题12.不想提交所在分支的修改，希望分支代码复位
+问题12.不想提交所在分支的修改，希望清空分支或希望代码复位
 解决方法：
-这个复位是复位到本地仓库的最原始版本，跟服务器版本可能不同
-git checkout xxx
-git reset --hard head^^
-如不是最新版本则
-git pull
+删除所有：rm -rf * ; git add --all .
+清空 git reset --hard head^^（复位到本地仓库的最原始版本，跟服务器对应的版本内容可能不同，不大建议使用）
+如不是最新版本则 git pull.
 
 问题13.无法开启模拟器
 解决方法：
