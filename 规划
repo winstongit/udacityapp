@@ -1,0 +1,32 @@
+四.工作规划
+--------------------------------------------------------------------------------------------
+1.网站或图书
+https://developers.google.com/
+http://tools.android.com/tech-docs/new-build-system/user-guide
+http://git-scm.com/book/zh/v1
+
+2.源码研究
+1)VST
+2)Doubango ：基于3GPP IMS/RCS 并能用于嵌入式和桌面系统的开源框架。
+http://doubango.googlecode.com/svn/doubango-read-only
+OpenVCS 代表开源视频会议服务器，用于管理多点控制单元（MCU）。每个MCU（又名 桥）可以处理多达64个参与者。
+Flash2IMS Adobe&reg;闪存&reg;的SIP/IMS网关。
+
+3.apktool反汇编
+android-apktool
+Windows:Download Windows wrapper script (Right click, Save Link As apktool.bat) Download apktool-2 (find newest here)Rename downloaded jar to apktool.jar Move both files (apktool.jar & apktool.bat) to your Windows directory (Usually C://Windows)
+If you do not have access to C://Windows, you may place the two files anywhere then add that directory to your Environment Variables System PATH variable.
+Try running apktool via command prompt
+
+4.谷歌分析
+https://www.google.com/analytics/web/provision?et=&authuser=#provision/CreateAccount/
+个人追踪标记 UA-56716336-1
+个人博客谷歌分析代码
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-56716336-1', 'auto');
+  ga('send', 'pageview');
+</script>
