@@ -118,6 +118,17 @@ Possible causes:<ul><li>The project 'weathercastv3.01' may be using a version of
 <a href="apply.gradle.plugin">Apply Gradle plugin</a></li>
 解决方法：app/build.grade runProguard 改成 minifyEnabled，再按同步就可以了。
 
+15.androidstudio添加文件夹
+右键new->package就可以了
+
+16.androidstudio adb报错
+ADB not responding. If you'd like to retry, then please manually kill "adb.exe" and click 'Restart'
+Errors from ADB:
+adb: ADB server didn't ACK
+adb: * failed to start daemon *
+ddms: 'D:\system\sdk\platform-tools\adb.exe,start-server' failed -- run manually if necessary
+拔插后正常。
+
 三.工作进展
 --------------------------------------------------------------------------------------------
 2014/11/19
@@ -133,12 +144,16 @@ Possible causes:<ul><li>The project 'weathercastv3.01' may be using a version of
 折腾1小时。
 
 2014/11/21
-1.同步代码4.3 Our First Table - add contract for weather table
+1.同步代码4.03 Our First Table - add contract for weather table
 建立数据库接口表
-2.同步代码4.5 About that Database... - create db helper
+2.同步代码4.05 About that Database... - create db helper
 3.安装调试androidstudio 1.0rc
 4.测试修改amlogic
 5.使用收费vpn
+
+2014/11/26
+1.因androidstudio导致丢失代码，再次同步代码4.03,版本定4.00
+2.同步代码4.04,4.09-finish-test-insert-read-db
 
 四.工作规划
 --------------------------------------------------------------------------------------------
