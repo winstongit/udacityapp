@@ -1,0 +1,74 @@
+二.android studio
+--------------------------------------------------------------------------------------------
+学习的基本配置文档，搞好各种参数的基本配置，熟练使用。
+problems meet in weather android studio:
+1.代码不自动补全
+解决方法：
+Files ->Settings-> Editor -> Auto Import
+代码报错时，按alt+enter可以自动修改丢失文件。
+
+2.关于android studio的报错信息的具体函数查找
+解决方法：看高亮的字体
+at com.weathercast.MyActivity$PlaceholderFragment.onCreateView(MyActivity.java:117)
+
+3.多个安卓设备连接电脑时，使用命令报错
+adb remount 192.168.1.151:5555 error: more than one device and emulator
+解决方法：
+adb -s 192.168.1.151:5555 remount
+
+4.修改工程的包名称
+Right-click on the package name (src/com.android.gesture.builder).
+Select Refactor > Rename and change the name, for example to com.android.gestureNEW.builder.
+Open the manifest file. Inside the  <manifest> tag, change the package name to com.android.gestureNEW.builder.
+Open each of the two Activity files and do Ctrl-Shift-O to add missing import packages, then save each file. Run the GestureBuilder application on the emulator.
+Right click on your project, scroll down to Android Tools, and then click on Rename Application Package.
+
+5.常用注释
+<!--注释-->
+
+6.How to auto format code in eclipse?
+把鼠标箭头移到出错误的layout上 点击鼠标右键选择Source然后再选Format 
+
+8.修改在AndroidManifest.xml中有个主activity的标签 里面那个label属性  修改运行就好
+
+android studio 1.0rc
+9.as最新版本V1.0打开老的工程报错
+Error running app: Gradle project sync failed. Please fix your project and try again.
+使用vpn修复了此问题
+
+10.老的工程无法使用androidstudio运行，编译报错
+Error:(16, 0) Gradle DSL method not found: 'runProguard()'
+Possible causes:<ul><li>The project 'weathercastv3.01' may be using a version of Gradle that does not contain the method.
+<a href="openGradleSettings">Gradle settings</a></li><li>The build file may be missing a Gradle plugin.
+<a href="apply.gradle.plugin">Apply Gradle plugin</a></li>
+
+11.问题adb server is out of date.  killing...
+adb nodaemon server
+netstat -ano | findstr "5037"
+tskill 4236
+
+
+12.Error:The project is using an unsupported version of the Android Gradle plug-in (0.12.2). The recommended version is 0.14.4.
+<a href="fixGradleElements">Fix plugin version and re-import project</a>
+解决方法：使用vpn修复此问题
+
+13.Error running app: Gradle project sync failed. Please fix your project and try again.
+解决方法：使用vpn修复此问题
+
+14.app图标无法打开，程序编译报错如下
+Error:(16, 0) Gradle DSL method not found: 'runProguard()'
+Possible causes:<ul><li>The project 'weathercastv3.01' may be using a version of Gradle that does not contain the method.
+<a href="openGradleSettings">Gradle settings</a></li><li>The build file may be missing a Gradle plugin.
+<a href="apply.gradle.plugin">Apply Gradle plugin</a></li>
+解决方法：app/build.grade runProguard 改成 minifyEnabled，再按同步就可以了。
+
+15.androidstudio添加文件夹
+右键new->package就可以了
+
+16.androidstudio adb报错
+ADB not responding. If you'd like to retry, then please manually kill "adb.exe" and click 'Restart'
+Errors from ADB:
+adb: ADB server didn't ACK
+adb: * failed to start daemon *
+ddms: 'D:\system\sdk\platform-tools\adb.exe,start-server' failed -- run manually if necessary
+拔插后正常。
