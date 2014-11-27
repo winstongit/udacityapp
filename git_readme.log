@@ -26,18 +26,11 @@ git remote add uda https://github.com/winstongit/udacityapp.git
 git config --global credential.helper wincred 			//保存密码，避免每次推送都输账户和密码
 
 4.拉取远程仓库分支
-多分支仓库不能直接git pull
-git remote 查看几个仓库
-git branch -r查看分支
-git branch -a 查看所有分支
-git fetch origin xxx
-git checkout -b origin xxx或git checkout origin xxx
-
-fatal: Cannot update paths and switch to branch 'origin' at the same time.
-Did you intend to checkout '4.11-add-content-provider-to-contract' which can not
- be resolved as commit?
- git fetch origin 4.11-add-content-provider-to-contract:4.11-add-content-provider-to-contract
- 
+git clone https://github.com/winstongit/Sunshine.git test
+git branch -a 
+git fetch origin xxx:xxx
+git checkout xxx
+(或者git fetch origin xxx然后git checkout -b origin xxx或git checkout origin xxx)
 
 5.添加远程分支
 //git remote add uda https://github.com/winstongit/udacityapp.git 	
@@ -158,5 +151,14 @@ adb remount
 解决方法：
 github还需要手动删除对应的分支
 
+问题17.修改了git ignore文件，无法正确checkout文件
+解决方法：
+最终使用google课程源码中的.gitignore文件，确认参数齐全。
 
-修改了git ignore文件，无法正确checkout文件
+问题18.
+fatal: Cannot update paths and switch to branch 'origin' at the same time.
+Did you intend to checkout '4.11-add-content-provider-to-contract' which can not
+ be resolved as commit?
+ git fetch origin 4.11-add-content-provider-to-contract:4.11-add-content-provider-to-contract
+解决方法：
+不能使用git fetch origin origin/xxx
