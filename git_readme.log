@@ -33,6 +33,12 @@ git branch -a 查看所有分支
 git fetch origin xxx
 git checkout -b origin xxx或git checkout origin xxx
 
+fatal: Cannot update paths and switch to branch 'origin' at the same time.
+Did you intend to checkout '4.11-add-content-provider-to-contract' which can not
+ be resolved as commit?
+ git fetch origin 4.11-add-content-provider-to-contract:4.11-add-content-provider-to-contract
+ 
+
 5.添加远程分支
 //git remote add uda https://github.com/winstongit/udacityapp.git 	
 git branch xxx
