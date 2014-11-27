@@ -31,7 +31,7 @@ git remote 查看几个仓库
 git branch -r查看分支
 git branch -a 查看所有分支
 git fetch origin xxx
-git checkout -b origin origin/master
+git checkout -b origin xxx或git checkout origin xxx
 
 5.添加远程分支
 //git remote add uda https://github.com/winstongit/udacityapp.git 	
@@ -151,3 +151,6 @@ adb remount
 问题16.无法删除github远程分支，git branch -d -r origin/x1 origin/x2 origin/x3无法删除
 解决方法：
 github还需要手动删除对应的分支
+
+
+修改了git ignore文件，无法正确checkout文件
