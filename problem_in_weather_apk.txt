@@ -53,3 +53,51 @@ Error:(19, 9) 错误: 无法将类 Object中的构造器 Object应用到给定�
 找到: Context,String,<空值>,int
 原因: 实际参数列表和形式参数列表长度不同
 解决方法：public class WeatherDbHelper修改为public class WeatherDbHelper extends SQLiteOpenHelper
+
+10.代码偶尔异常中断?
+
+11.工程使用客户的指定gradle（use customizable gradle wrapper）
+遇到问题Unknown host 'downloads.gradle.org'.Consult IDE log for more details (Help | Show Log)
+
+12.官方下载的代码无法显示app文件夹，没有完整的工程包
+暂不清楚，不处理
+
+13.app显示叉叉，不正确
+在File->Project Structure上选择缺失的配置，如sdk,jdk.
+
+14.发现weathercontact中变量路径有问题
+public static final String CONTENT_AUTHORITY = "com.example.android.sunshine.app";
+
+15.assert报错
+11-28 13:35:11.350    6649-6662/com.weathercast I/TestRunner﹕ started: testGetType(com.weathercast.test.TestProvider)
+11-28 13:35:11.350    6649-6662/com.weathercast I/TestRunner﹕ failed: testGetType(com.weathercast.test.TestProvider)
+11-28 13:35:11.350    6649-6662/com.weathercast I/TestRunner﹕ ----- begin exception -----
+11-28 13:35:11.350    6649-6662/com.weathercast I/TestRunner﹕ junit.framework.ComparisonFailure: expected:<vnd.android.cursor.dir/com.weathercast.data/weather> but was:<null>
+            at junit.framework.Assert.assertEquals(Assert.java:85)
+            at junit.framework.Assert.assertEquals(Assert.java:91)
+            at com.weathercast.test.TestProvider.testGetType(TestProvider.java:85)
+            at java.lang.reflect.Method.invokeNative(Native Method)
+            at java.lang.reflect.Method.invoke(Method.java:511)
+            at junit.framework.TestCase.runTest(TestCase.java:168)
+            at junit.framework.TestCase.runBare(TestCase.java:134)
+            at junit.framework.TestResult$1.protect(TestResult.java:115)
+            at junit.framework.TestResult.runProtected(TestResult.java:133)
+            at junit.framework.TestResult.run(TestResult.java:118)
+            at junit.framework.TestCase.run(TestCase.java:124)
+            at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:190)
+            at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:175)
+            at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:555)
+            at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1584)
+11-28 13:35:11.350    6649-6662/com.weathercast I/TestRunner﹕ ----- end exception -----
+
+16.运行单元测试会中断
+Running tests
+Test running started
+java.lang.NullPointerException
+at com.weathercast.test.TestDb.validateCursor(TestDb.java:118)
+at com.weathercast.test.TestProvider.testInsertReadProvider(TestProvider.java:70)
+at java.lang.reflect.Method.invokeNative(Native Method)
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:190)
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:175)
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:555)
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1584)
