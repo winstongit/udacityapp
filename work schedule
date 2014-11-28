@@ -26,3 +26,6 @@
 
 2014/11/27
 1.androidstudio的忽略文件整理
+
+2014/11/28
+1.同步4.12-4.19 Update testInsertRead to use WeatherProvider for query
