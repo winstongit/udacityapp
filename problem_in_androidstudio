@@ -86,3 +86,8 @@ Refresh Sources:
 Error:failed to find target android-19 : D:\system\sdk\android-sdk_r23.0.5-windows\android-sdk-windows
 <a href="install.android.platform">Install missing platform(s) and sync project</a>
 解决方法：使用vpn成功下载资源文件
+
+19.缺少文件
+Error:failed to find Build Tools revision 20.0.0
+<a href="install.build.tools">Install Build Tools 20.0.0 and sync project</a>
+解决方法:使用vpn成功下载资源文件
