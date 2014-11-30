@@ -47,7 +47,6 @@ adb nodaemon server
 netstat -ano | findstr "5037"
 tskill 4236
 
-
 12.Error:The project is using an unsupported version of the Android Gradle plug-in (0.12.2). The recommended version is 0.14.4.
 <a href="fixGradleElements">Fix plugin version and re-import project</a>
 解决方法：使用vpn修复此问题
@@ -72,7 +71,6 @@ adb: ADB server didn't ACK
 adb: * failed to start daemon *
 ddms: 'D:\system\sdk\platform-tools\adb.exe,start-server' failed -- run manually if necessary
 拔插后正常。
-
 
 17.缺少android的19api sdk
 Error:Failed to find: com.android.support:appcompat-v7:21.+
