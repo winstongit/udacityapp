@@ -72,3 +72,19 @@ adb: ADB server didn't ACK
 adb: * failed to start daemon *
 ddms: 'D:\system\sdk\platform-tools\adb.exe,start-server' failed -- run manually if necessary
 拔插后正常。
+
+
+17.缺少android的19api sdk
+Error:Failed to find: com.android.support:appcompat-v7:21.+
+<a href="install.m2.repo">Install Repository and sync project</a><br><a href="openFile">Open File</a><br><a href="open.dependency.in.project.structure">Open in Project Structure dialog</a>
+解决方法：
+Loading SDK information...
+Refresh Sources:
+  Fetched Add-ons List successfully
+  Refresh Sources
+使用vpn成功下载资源文件
+
+18.缺少
+Error:failed to find target android-19 : D:\system\sdk\android-sdk_r23.0.5-windows\android-sdk-windows
+<a href="install.android.platform">Install missing platform(s) and sync project</a>
+解决方法：使用vpn成功下载资源文件
