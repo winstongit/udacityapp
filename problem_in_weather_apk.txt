@@ -25,19 +25,14 @@ http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=me
 解决方法:安装google地图后可以显示地图，但是无法正常定位城市坐标。
 判断不能准确定位坐标的原因是谷歌地图需要翻墙使用。
 
-6.天气有时无显示
-解决方法：
-网络问题？？？？
-
-7.Error:(75, 55) 错误: 找不到符号 符号:   变量 detail_txt位置: 类 id
+6.Error:(75, 55) 错误: 找不到符号 符号:   变量 detail_txt位置: 类 id
 Error:(86, 51) 错误: 找不到符号 符号:   变量 action_share
 解决方法：问题是复制代码导致文件路径不对。
 xml中的tools:context修改为对应的窗口。如tools:context=".MyActivity"
 menu/detail.xml的路径有问题，detail_txt名称不对，应该是detail_text.
 menu/detail_fragment.xml的action_setting修改为action_share
 
-
-8.位置: 类 idError:(90, 75) 错误: 不兼容的类型: ActionProvider无法转换为ShareActionProvider
+7.位置: 类 idError:(90, 75) 错误: 不兼容的类型: ActionProvider无法转换为ShareActionProvider
 注: E:\androidlearn\code\code_back\weathercastv3.01\app\src\main\java\com\weathercast\SettingsActivity.java使用或覆盖了已过时的 API。
 ShareActionProvider mShareActionProvider =
 (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
@@ -47,28 +42,61 @@ mShareActionProvider = (android.support.v7.widget.ShareActionProvider) MenuItemC
 detailfragment.xml中添加
 app:actionProviderClass="android.support.v7.widget.ShareActionProvider" 
 
-9.问题
+8.问题
 Error:(19, 9) 错误: 无法将类 Object中的构造器 Object应用到给定类型;
 需要: 没有参数
 找到: Context,String,<空值>,int
 原因: 实际参数列表和形式参数列表长度不同
 解决方法：public class WeatherDbHelper修改为public class WeatherDbHelper extends SQLiteOpenHelper
 
-10.代码偶尔异常中断?
+9.app显示叉叉，不正确
+Error:(15, 0) Gradle DSL method not found: 'runProguard()'
+Possible causes:<ul><li>The project 'sunshine' may be using a version of Gradle that does not contain the method.
+<a href="openGradleSettings">Gradle settings</a></li><li>The build file may be missing a Gradle plugin.
+<a href="apply.gradle.plugin">Apply Gradle plugin</a></li>
+解决方法：在File->Project Structure上选择缺失的配置，如sdk,jdk.minifyEnabled false,然后同步就可以运行。
 
-11.工程使用客户的指定gradle（use customizable gradle wrapper）
+
+10.发现weathercontact中变量路径有问题
+解决方法：public static final String CONTENT_AUTHORITY = "com.example.android.sunshine.app";
+
+11.下载的代码4.33-use-loaders无法正常运行。
+Error:The project is using an unsupported version of the Android Gradle plug-in (0.12.2). The recommended version is 0.14.4.
+<a href="fixGradleElements">Fix plugin version and re-import project</a>
+解决方法：使用gradle21就可以
+
+12.编译报错
+E:\androidlearn\code\udacode\app\src\main\java\com\weathercast\DetailActivity.java
+Error:(17, 1) 错误: 已在 single-type 导入中定义android.widget.ShareActionProvider
+Error:(91, 75) 错误: 不可转换的类型
+需要: ShareActionProvider
+找到:    ActionProvider
+注: E:\androidlearn\code\udacode\app\src\main\java\com\weathercast\SettingsActivity.java使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+2 个错误
+Error:Execution failed for task ':app:compileDebugJava'.
+> Compilation failed; see the compiler error output for details.
+解决方法：切换导入的包
+
+13.对比代码无差异
+Changes not staged for commit:
+解决方法：没有切换分支，导致修改没有传到服务器。发现很多冗余的文件已经上传到服务器，下次注意.ignore文件。
+
+
+没解决的问题：
+1.工程使用客户的指定gradle（use customizable gradle wrapper）
 遇到问题Unknown host 'downloads.gradle.org'.Consult IDE log for more details (Help | Show Log)
 
-12.官方下载的代码无法显示app文件夹，没有完整的工程包
+2.代码偶尔异常中断?
+
+3.天气有时无显示
+解决方法：
+网络问题？？？？
+
+4.官方下载的代码无法显示app文件夹，没有完整的工程包
 暂不清楚，不处理
 
-13.app显示叉叉，不正确
-在File->Project Structure上选择缺失的配置，如sdk,jdk.
-
-14.发现weathercontact中变量路径有问题
-public static final String CONTENT_AUTHORITY = "com.example.android.sunshine.app";
-
-15.assert报错
+5.assert报错
 11-28 13:35:11.350    6649-6662/com.weathercast I/TestRunner﹕ started: testGetType(com.weathercast.test.TestProvider)
 11-28 13:35:11.350    6649-6662/com.weathercast I/TestRunner﹕ failed: testGetType(com.weathercast.test.TestProvider)
 11-28 13:35:11.350    6649-6662/com.weathercast I/TestRunner﹕ ----- begin exception -----
@@ -90,7 +118,7 @@ public static final String CONTENT_AUTHORITY = "com.example.android.sunshine.app
             at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1584)
 11-28 13:35:11.350    6649-6662/com.weathercast I/TestRunner﹕ ----- end exception -----
 
-16.运行单元测试会中断
+6.运行单元测试会中断
 Running tests
 Test running started
 java.lang.NullPointerException
@@ -102,7 +130,7 @@ at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:175)
 at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:555)
 at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1584)
 
-17.单元测试有问题
+7.单元测试有问题
 11-29 08:34:23.909    4773-4806/com.weathercast D/TestProvider﹕ New row id: 1
 11-29 08:34:23.909    4773-4806/com.weathercast I/TestRunner﹕ failed: testInsertReadProvider(com.weathercast.test.TestProvider)
 11-29 08:34:23.909    4773-4806/com.weathercast I/TestRunner﹕ ----- begin exception -----
@@ -123,46 +151,7 @@ at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:15
             at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1584)
 11-29 08:34:23.909    4773-4806/com.weathercast I/TestRunner﹕ ----- end exception -----
 
-
-18.编译报错
-E:\androidlearn\code\udacode\app\src\main\java\com\weathercast\DetailActivity.java
-Error:(17, 1) 错误: 已在 single-type 导入中定义android.widget.ShareActionProvider
-Error:(91, 75) 错误: 不可转换的类型
-需要: ShareActionProvider
-找到:    ActionProvider
-注: E:\androidlearn\code\udacode\app\src\main\java\com\weathercast\SettingsActivity.java使用或覆盖了已过时的 API。
-注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
-2 个错误
-Error:Execution failed for task ':app:compileDebugJava'.
-> Compilation failed; see the compiler error output for details.
-解决方法：切换导入的包
-
-19.对比代码无差异
-Changes not staged for commit:
-解决方法：没有切换分支，导致修改没有传到服务器。发现很多冗余的文件已经上传到服务器，下次注意.ignore文件。
-
-20.4.25-content-provider-insert单元测试报错
-Running tests
-Test running started
-junit.framework.ComparisonFailure: expected:<vnd.android.cursor.dir/com.weathercast/weather> but was:<null>
-at com.weathercast.test.TestProvider.testGetType(TestProvider.java:123)
-at java.lang.reflect.Method.invokeNative(Native Method)
-at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:190)
-at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:175)
-at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:555)
-at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1584)
-java.lang.NullPointerException
-at com.weathercast.test.TestDb.validateCursor(TestDb.java:114)
-at com.weathercast.test.TestProvider.testInsertReadProvider(TestProvider.java:54)
-at java.lang.reflect.Method.invokeNative(Native Method)
-at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:190)
-at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:175)
-at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:555)
-at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1584)
-Finish
-解决方法：未
-
-21.运行有异常
+8.运行有异常
 11-27 09:12:27.468  23107-23107/com.weathercast E/dalvikvm﹕ native fork pid:0 done.
 11-27 09:12:27.468  23107-23116/com.weathercast E/dalvikvm﹕ threadid=6: created from interp,name=ReferenceQueueDaemon
 11-27 09:12:27.468  23107-23116/com.weathercast E/dalvikvm﹕ threadid=6: calling run(),name=ReferenceQueueDaemon
@@ -228,21 +217,7 @@ Finish
 11-27 09:24:39.990  23107-23107/com.weathercast V/MyActivity﹕ in onPause
 解决方法：未
 
-22.下载的代码4.33-use-loaders无法正常运行。
-Error:The project is using an unsupported version of the Android Gradle plug-in (0.12.2). The recommended version is 0.14.4.
-<a href="fixGradleElements">Fix plugin version and re-import project</a>
-解决方法：使用gradle21就可以
-
-
-23.代码显示正常，app图标叉叉
-Error:(15, 0) Gradle DSL method not found: 'runProguard()'
-Possible causes:<ul><li>The project 'sunshine' may be using a version of Gradle that does not contain the method.
-<a href="openGradleSettings">Gradle settings</a></li><li>The build file may be missing a Gradle plugin.
-<a href="apply.gradle.plugin">Apply Gradle plugin</a></li>
-解决方法： minifyEnabled false,然后同步就可以运行。
-
-
-23.4.33-use-loaders单元测试失败
+9.4.33-use-loaders单元测试失败
 12-01 12:32:24.157  25274-25291/com.example.android.sunshine.app I/TestRunner﹕ ----- begin exception -----
 12-01 12:32:24.157  25274-25291/com.example.android.sunshine.app I/TestRunner﹕ junit.framework.AssertionFailedError: expected:<-1> but was:<7>
             at junit.framework.Assert.fail(Assert.java:50)
