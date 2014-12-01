@@ -122,3 +122,109 @@ at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:15
             at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:555)
             at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1584)
 11-29 08:34:23.909    4773-4806/com.weathercast I/TestRunner﹕ ----- end exception -----
+
+
+18.编译报错
+E:\androidlearn\code\udacode\app\src\main\java\com\weathercast\DetailActivity.java
+Error:(17, 1) 错误: 已在 single-type 导入中定义android.widget.ShareActionProvider
+Error:(91, 75) 错误: 不可转换的类型
+需要: ShareActionProvider
+找到:    ActionProvider
+注: E:\androidlearn\code\udacode\app\src\main\java\com\weathercast\SettingsActivity.java使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+2 个错误
+Error:Execution failed for task ':app:compileDebugJava'.
+> Compilation failed; see the compiler error output for details.
+解决方法：切换导入的包
+
+19.对比代码无差异
+Changes not staged for commit:
+解决方法：没有切换分支，导致修改没有传到服务器。发现很多冗余的文件已经上传到服务器，下次注意.ignore文件。
+
+20.4.25-content-provider-insert单元测试报错
+Running tests
+Test running started
+junit.framework.ComparisonFailure: expected:<vnd.android.cursor.dir/com.weathercast/weather> but was:<null>
+at com.weathercast.test.TestProvider.testGetType(TestProvider.java:123)
+at java.lang.reflect.Method.invokeNative(Native Method)
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:190)
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:175)
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:555)
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1584)
+java.lang.NullPointerException
+at com.weathercast.test.TestDb.validateCursor(TestDb.java:114)
+at com.weathercast.test.TestProvider.testInsertReadProvider(TestProvider.java:54)
+at java.lang.reflect.Method.invokeNative(Native Method)
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:190)
+at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:175)
+at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:555)
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1584)
+Finish
+解决方法：未
+
+21.运行有异常
+11-27 09:12:27.468  23107-23107/com.weathercast E/dalvikvm﹕ native fork pid:0 done.
+11-27 09:12:27.468  23107-23116/com.weathercast E/dalvikvm﹕ threadid=6: created from interp,name=ReferenceQueueDaemon
+11-27 09:12:27.468  23107-23116/com.weathercast E/dalvikvm﹕ threadid=6: calling run(),name=ReferenceQueueDaemon
+11-27 09:12:27.468  23107-23117/com.weathercast E/dalvikvm﹕ threadid=7: created from interp,name=FinalizerDaemon
+11-27 09:12:27.468  23107-23117/com.weathercast E/dalvikvm﹕ threadid=7: calling run(),name=FinalizerDaemon
+11-27 09:12:27.468  23107-23118/com.weathercast E/dalvikvm﹕ threadid=8: created from interp,name=FinalizerWatchdogDaemon
+11-27 09:12:27.478  23107-23118/com.weathercast E/dalvikvm﹕ threadid=8: calling run(),name=FinalizerWatchdogDaemon
+11-27 09:12:27.528  23107-23107/com.weathercast D/ActivityThread﹕ setTargetHeapUtilization:0.25
+11-27 09:12:27.528  23107-23107/com.weathercast D/ActivityThread﹕ setTargetHeapIdealFree:8388608
+11-27 09:12:27.528  23107-23107/com.weathercast D/ActivityThread﹕ setTargetHeapConcurrentStart:2097152
+11-27 09:12:27.789  23107-23125/com.weathercast E/dalvikvm﹕ threadid=11: created from interp,name=SharedPreferencesImpl-load
+11-27 09:12:27.789  23107-23125/com.weathercast E/dalvikvm﹕ threadid=11: calling run(),name=SharedPreferencesImpl-load
+11-27 09:12:27.789  23107-23125/com.weathercast E/dalvikvm﹕ threadid=11: exiting,name=SharedPreferencesImpl-load
+11-27 09:12:27.789  23107-23127/com.weathercast E/dalvikvm﹕ threadid=11: created from interp,name=AsyncTask #1
+11-27 09:12:27.789  23107-23127/com.weathercast E/dalvikvm﹕ threadid=11: calling run(),name=AsyncTask #1
+11-27 09:12:27.789  23107-23107/com.weathercast V/MyActivity﹕ in onResume
+11-27 09:12:27.859  23107-23107/com.weathercast I/Adreno200-EGL﹕ <qeglDrvAPI_eglInitialize:294>: EGL 1.4 QUALCOMM build:  (CL3090659)
+    Build Date: 09/03/13 Tue
+    Local Branch:
+    Remote Branch:
+    Local Patches:
+    Reconstruct Branch:
+11-27 09:13:25.010  23107-23107/com.weathercast V/MyActivity﹕ in onPause
+11-27 09:13:25.090  23107-23107/com.weathercast V/MyActivity﹕ in onStop
+11-27 09:24:04.903  23107-23621/com.weathercast E/dalvikvm﹕ threadid=12: created from interp,name=AsyncTask #2
+11-27 09:24:04.903  23107-23621/com.weathercast E/dalvikvm﹕ threadid=12: calling run(),name=AsyncTask #2
+11-27 09:24:04.913  23107-23107/com.weathercast V/MyActivity﹕ in onResume
+11-27 09:24:06.905  23107-23107/com.weathercast V/MyActivity﹕ in onPause
+11-27 09:24:07.445  23107-23107/com.weathercast V/MyActivity﹕ in onStop
+11-27 09:24:07.455  23107-23107/com.weathercast V/MyActivity﹕ in onDestroy
+11-27 09:24:17.616  23107-23107/com.weathercast V/MyActivity﹕ in onResume
+11-27 09:24:39.960  23107-23752/com.weathercast E/dalvikvm﹕ threadid=14: created from interp,name=AsyncTask #3
+11-27 09:24:39.960  23107-23753/com.weathercast E/dalvikvm﹕ threadid=15: created from interp,name=AsyncTask #4
+11-27 09:24:39.960  23107-23752/com.weathercast E/dalvikvm﹕ threadid=14: calling run(),name=AsyncTask #3
+11-27 09:24:39.960  23107-23621/com.weathercast E/dalvikvm﹕ threadid=12: exiting,name=AsyncTask #2
+11-27 09:24:39.960  23107-23621/com.weathercast W/dalvikvm﹕ threadid=12: thread exiting with uncaught exception (group=0x41656498)
+11-27 09:24:39.960  23107-23753/com.weathercast E/dalvikvm﹕ threadid=15: calling run(),name=AsyncTask #4
+11-27 09:24:39.980  23107-23621/com.weathercast E/AndroidRuntime﹕ FATAL EXCEPTION: AsyncTask #2
+    java.lang.RuntimeException: An error occured while executing doInBackground()
+            at android.os.AsyncTask$3.done(AsyncTask.java:299)
+            at java.util.concurrent.FutureTask$Sync.innerSetException(FutureTask.java:273)
+            at java.util.concurrent.FutureTask.setException(FutureTask.java:124)
+            at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:307)
+            at java.util.concurrent.FutureTask.run(FutureTask.java:137)
+            at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:230)
+            at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1076)
+            at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:569)
+            at java.lang.Thread.run(Thread.java:856)
+     Caused by: java.lang.NullPointerException
+            at android.preference.PreferenceManager.getDefaultSharedPreferencesName(PreferenceManager.java:371)
+            at android.preference.PreferenceManager.getDefaultSharedPreferences(PreferenceManager.java:366)
+            at com.weathercast.ForecastFragment$FetchWeatherTask.formatHighLows(ForecastFragment.java:135)
+            at com.weathercast.ForecastFragment$FetchWeatherTask.getWeatherDataFromJson(ForecastFragment.java:203)
+            at com.weathercast.ForecastFragment$FetchWeatherTask.doInBackground(ForecastFragment.java:297)
+            at com.weathercast.ForecastFragment$FetchWeatherTask.doInBackground(ForecastFragment.java:113)
+            at android.os.AsyncTask$2.call(AsyncTask.java:287)
+            at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:305)
+????????????at java.util.concurrent.FutureTask.run(FutureTask.java:137)
+????????????at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:230)
+????????????at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1076)
+????????????at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:569)
+????????????at java.lang.Thread.run(Thread.java:856)
+11-27 09:24:39.990  23107-23107/com.weathercast V/MyActivity﹕ in onPause
+解决方法：未
+
