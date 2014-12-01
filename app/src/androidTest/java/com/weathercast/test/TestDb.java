@@ -111,7 +111,7 @@ public class TestDb extends AndroidTestCase {
 
     static void validateCursor(Cursor valueCursor, ContentValues expectedValues) {
 
-//        assertTrue(valueCursor.moveToFirst());
+        assertTrue(valueCursor.moveToFirst());
 
         Set<Map.Entry<String, Object>> valueSet = expectedValues.valueSet();
         for (Map.Entry<String, Object> entry : valueSet) {
@@ -119,7 +119,7 @@ public class TestDb extends AndroidTestCase {
             int idx = valueCursor.getColumnIndex(columnName);
             assertFalse(idx == -1);
             String expectedValue = entry.getValue().toString();
-            //assertEquals(expectedValue, valueCursor.getString(idx));
+            assertEquals(expectedValue, valueCursor.getString(idx));
         }
         valueCursor.close();
     }

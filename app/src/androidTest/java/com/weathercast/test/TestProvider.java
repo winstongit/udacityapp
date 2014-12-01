@@ -1,9 +1,11 @@
 package com.weathercast.test;
 
 import android.annotation.TargetApi;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Build;
 import android.test.AndroidTestCase;
 import android.util.Log;
@@ -24,19 +26,13 @@ public class TestProvider extends AndroidTestCase {
 
     public void testInsertReadProvider() {
 
-        // If there's an error in those massive SQL table creation Strings,
-        // errors will be thrown here when you try to get a writable database.
-        WeatherDbHelper dbHelper = new WeatherDbHelper(mContext);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-
         ContentValues testValues = TestDb.createNorthPoleLocationValues();
 
-        long locationRowId;
-        locationRowId = db.insert(LocationEntry.TABLE_NAME, null, testValues);
+        Uri locationUri = mContext.getContentResolver().insert(LocationEntry.CONTENT_URI, testValues);
+        long locationRowId = ContentUris.parseId(locationUri);
 
         // Verify we got a row back.
         assertTrue(locationRowId != -1);
-        Log.d(LOG_TAG, "New row id: " + locationRowId);
 
         // Data's inserted.  IN THEORY.  Now pull some out to stare at it and verify it made
         // the round trip.
@@ -65,8 +61,9 @@ public class TestProvider extends AndroidTestCase {
         // Fantastic.  Now that we have a location, add some weather!
         ContentValues weatherValues = TestDb.createWeatherValues(locationRowId);
 
-        long weatherRowId = db.insert(WeatherEntry.TABLE_NAME, null, weatherValues);
-        assertTrue(weatherRowId != -1);
+        Uri weatherInsertUri = mContext.getContentResolver()
+                .insert(WeatherEntry.CONTENT_URI, weatherValues);
+        assertTrue(weatherInsertUri != null);
 
         // A cursor is your primary interface to the query results.
         Cursor weatherCursor = mContext.getContentResolver().query(
@@ -112,37 +109,36 @@ public class TestProvider extends AndroidTestCase {
                 null
         );
         TestDb.validateCursor(weatherCursor, weatherValues);
-        dbHelper.close();
     }
     public void testGetType() {
         // content://com.weathercast
         String type = mContext.getContentResolver().getType(WeatherEntry.CONTENT_URI);
         // vnd.android.cursor.dir/com.weathercast/weather
-        //assertEquals(WeatherEntry.CONTENT_TYPE, type);
+        assertEquals(WeatherEntry.CONTENT_TYPE, type);
 
         String testLocation = "94074";
         // content://com.example.android.sunshine.app/weather/94074
         type = mContext.getContentResolver().getType(
                 WeatherEntry.buildWeatherLocation(testLocation));
         // vnd.android.cursor.dir/com.example.android.sunshine.app/weather
-        //assertEquals(WeatherEntry.CONTENT_TYPE, type);
+        assertEquals(WeatherEntry.CONTENT_TYPE, type);
 
         String testDate = "20140612";
         // content://com.example.android.sunshine.app/weather/94074/20140612
         type = mContext.getContentResolver().getType(
                 WeatherEntry.buildWeatherLocationWithDate(testLocation, testDate));
         // vnd.android.cursor.item/com.example.android.sunshine.app/weather
-        //assertEquals(WeatherEntry.CONTENT_ITEM_TYPE, type);
+        assertEquals(WeatherEntry.CONTENT_ITEM_TYPE, type);
 
         // content://com.example.android.sunshine.app/location/
         type = mContext.getContentResolver().getType(LocationEntry.CONTENT_URI);
         // vnd.android.cursor.dir/com.example.android.sunshine.app/location
-        //assertEquals(LocationEntry.CONTENT_TYPE, type);
+        assertEquals(LocationEntry.CONTENT_TYPE, type);
 
         // content://com.example.android.sunshine.app/location/1
         type = mContext.getContentResolver().getType(LocationEntry.buildLocationUri(1L));
         // vnd.android.cursor.item/com.example.android.sunshine.app/location
-       // assertEquals(LocationEntry.CONTENT_ITEM_TYPE, type);
+        assertEquals(LocationEntry.CONTENT_ITEM_TYPE, type);
     }
     // The target api annotation is needed for the call to keySet -- we wouldn't want
     // to use this in our app, but in a test it's fine to assume a higher target.
