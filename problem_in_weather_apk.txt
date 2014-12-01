@@ -228,3 +228,32 @@ Finish
 11-27 09:24:39.990  23107-23107/com.weathercast V/MyActivity﹕ in onPause
 解决方法：未
 
+22.下载的代码4.33-use-loaders无法正常运行。
+Error:The project is using an unsupported version of the Android Gradle plug-in (0.12.2). The recommended version is 0.14.4.
+<a href="fixGradleElements">Fix plugin version and re-import project</a>
+修改： minifyEnabled false
+然后同步就可以运行了。
+
+23.4.33-use-loaders单元测试失败
+12-01 12:32:24.157  25274-25291/com.example.android.sunshine.app I/TestRunner﹕ ----- begin exception -----
+12-01 12:32:24.157  25274-25291/com.example.android.sunshine.app I/TestRunner﹕ junit.framework.AssertionFailedError: expected:<-1> but was:<7>
+            at junit.framework.Assert.fail(Assert.java:50)
+            at junit.framework.Assert.failNotEquals(Assert.java:287)
+            at junit.framework.Assert.assertEquals(Assert.java:67)
+            at junit.framework.Assert.assertEquals(Assert.java:199)
+            at junit.framework.Assert.assertEquals(Assert.java:205)
+            at com.example.android.sunshine.app.test.TestProvider.testRemoveHumidityAndReadWeather(TestProvider.java:340)
+            at java.lang.reflect.Method.invokeNative(Native Method)
+            at java.lang.reflect.Method.invoke(Method.java:511)
+            at junit.framework.TestCase.runTest(TestCase.java:168)
+            at junit.framework.TestCase.runBare(TestCase.java:134)
+            at junit.framework.TestResult$1.protect(TestResult.java:115)
+            at junit.framework.TestResult.runProtected(TestResult.java:133)
+            at junit.framework.TestResult.run(TestResult.java:118)
+            at junit.framework.TestCase.run(TestCase.java:124)
+            at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:190)
+            at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:175)
+            at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:555)
+            at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1584)
+12-01 12:32:24.157  25274-25291/com.example.android.sunshine.app I/TestRunner﹕ ----- end exception -----
+解决方法：没
