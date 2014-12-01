@@ -231,8 +231,16 @@ Finish
 22.下载的代码4.33-use-loaders无法正常运行。
 Error:The project is using an unsupported version of the Android Gradle plug-in (0.12.2). The recommended version is 0.14.4.
 <a href="fixGradleElements">Fix plugin version and re-import project</a>
-修改： minifyEnabled false
-然后同步就可以运行了。
+解决方法：使用gradle21就可以
+
+
+23.代码显示正常，app图标叉叉
+Error:(15, 0) Gradle DSL method not found: 'runProguard()'
+Possible causes:<ul><li>The project 'sunshine' may be using a version of Gradle that does not contain the method.
+<a href="openGradleSettings">Gradle settings</a></li><li>The build file may be missing a Gradle plugin.
+<a href="apply.gradle.plugin">Apply Gradle plugin</a></li>
+解决方法： minifyEnabled false,然后同步就可以运行。
+
 
 23.4.33-use-loaders单元测试失败
 12-01 12:32:24.157  25274-25291/com.example.android.sunshine.app I/TestRunner﹕ ----- begin exception -----
