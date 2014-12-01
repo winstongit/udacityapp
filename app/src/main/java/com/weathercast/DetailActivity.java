@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ShareActionProvider;
 import android.widget.TextView;
+import android.support.v7.widget.ShareActionProvider;
 
 /**
  * Created by Administrator on 14-11-18.
@@ -86,8 +87,8 @@ public class DetailActivity extends ActionBarActivity {
             MenuItem menuItem = menu.findItem(R.id.action_share);
 
             // Get the provider and hold onto it to set/change the share intent.
-            android.support.v7.widget.ShareActionProvider mShareActionProvider;
-            mShareActionProvider = (android.support.v7.widget.ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
+            ShareActionProvider mShareActionProvider =
+                    (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
 
             // Attach an intent to this ShareActionProvider.  You can update this at any time,
             // like when the user selects a new piece of data they might like to share.
