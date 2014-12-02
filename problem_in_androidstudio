@@ -116,3 +116,28 @@ Consult IDE log for more details (Help | Show Log)
 23.
 Gradle version 1.10 is required. Current version is 2.0. If using the gradle wrapper, try editing the distributionUrl in E:\androidlearn\ftp\transdroid\app\gradle\wrapper\gradle-wrapper.properties to gradle-1.10-all.zip.
 Please fix the project's Gradle settings.Consult IDE log for more details (Help | Show Log)
+
+
+Cannot start compilation: the output path is not specified for module "app".
+Specify the output path in Configure Project.
+
+
+Gradle version 1.10 is required. Current version is 2.0. If using the gradle wrapper, try editing the distributionUrl in E:\androidlearn\ftp\sun1\app\gradle\wrapper\gradle-wrapper.properties to gradle-1.10-all.zip.
+Please fix the project's Gradle settings.
+Consult IDE log for more details (Help | Show Log)
+
+Ambiguous method overloading for method java.io.File#<init>.
+Cannot resolve which method to invoke for [null, class java.lang.String] due to overlapping prototypes between:
+	[class java.lang.String, class java.lang.String]
+	[class java.io.File, class java.lang.String]
+
+Consult IDE log for more details (Help | Show Log)
+
+C:\Program Files\Java\jdk1.7.0_09\bin
+
+
+修改E:\androidlearn\ftp\sun1\build.gradle
+classpath 'com.android.tools.build:gradle:0.12.+'为        classpath 'com.android.tools.build:gradle:0.14.4'
+
+修改E:\androidlearn\ftp\sun1\gradle\wrapper\gradle-wrapper.properties		
+distributionUrl=http\://services.gradle.org/distributions/gradle-2.0-all.zip改为distributionUrl=https\://services.gradle.org/distributions/gradle-2.2-all.zip
