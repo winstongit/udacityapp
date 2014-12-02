@@ -1,0 +1,40 @@
+keystore是由jdk自带的工具keytool生成的。  
+具体生成方式参考：   开始->运行->cmd->cd到你安装的jdk的目录C:\Program Files\Java\jdk1.7.0_10\bin  
+然后输入：   keytool -genkey -alias winstongit.keystore -keyalg RSA -validity 20000 -keystore winstongit.keystore   
+winstongit
+androidbox
+CN=winstongit, OU=androidbox, O=androidbox, L=shenzhen, ST=guangdong, C=cn
+
+配置签名的APK：
+    signingConfigs {
+        release {
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+	
+并配置 ~/.gradle/gradle.properties
+
+RELEASE_STORE_FILE=android.keystore
+RELEASE_STORE_PASSWORD=pwd
+RELEASE_KEY_ALIAS=android.keystore
+RELEASE_KEY_PASSWORD=pwd	
+	
+使用下面的命令会在./build/apk/中生成签名好的文件：
+$ ./gradlew assembleDebug	
+
+
+
+编译：直接ant 是不会有文件输出的，所以后面一定要带上参数 ant 参数如下：      * debug：带调试用签名的构建      * release：构建应用程序，生成的apk必须签名才可以发布     * install：安装调试构建的包到运行着的模拟器或者设备；     * reinstall     * uninstall  开始执行编译：切换到工程目录下：E:\MyLiB\Android\AndroidAnt\MyBoardCastReciver 例如(
+生成调试版本)：E:\MyLiB\Android\AndroidAnt\MyBoardCastReciver>ant debug 例如(生成未签名版本)：E:\MyLiB\Android\AndroidAnt\MyBoardCastReciver>ant release    参考：http://www.cnblogs.com/tankaixiong/archive/2010/11/24/1887156.html    二、keystore制作   Apk签名首先要有一个keystore的签名用的文件。  
+
+-alias 后面跟的是别名这里是 asaiAndroid.store 
