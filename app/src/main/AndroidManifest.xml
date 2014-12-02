@@ -24,5 +24,16 @@
                 android:name="@string/action_settings"
                 android:value=".MyActivity"/>
         </activity>
+		<activity
+            android:name=".DetailActivity"
+            android:label="Detail"
+            android:parentActivityName="com.weathercast.MyActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.weathercast.MyActivity" />
+        </activity>		
+        <provider
+            android:authorities="com.weathercast.app"
+            android:name=".data.WeatherProvider" />		
     </application>
 </manifest>
