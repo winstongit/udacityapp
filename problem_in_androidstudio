@@ -1,7 +1,10 @@
-二.android studio
+android studio
 --------------------------------------------------------------------------------------------
-学习的基本配置文档，搞好各种参数的基本配置，熟练使用。
-problems meet in weather android studio:
+一.学习的基本配置文档，搞好各种参数的基本配置，熟练使用。
+
+
+
+二.problems meet in weather android studio:
 1.代码不自动补全
 解决方法：
 Files ->Settings-> Editor -> Auto Import
@@ -91,3 +94,25 @@ Error:failed to find target android-19 : D:\system\sdk\android-sdk_r23.0.5-windo
 Error:failed to find Build Tools revision 20.0.0
 <a href="install.build.tools">Install Build Tools 20.0.0 and sync project</a>
 解决方法:使用vpn成功下载资源文件
+
+20.why ftp android can't work?
+Error:Gradle version 1.10 is required. Current version is 2.2. If using the gradle wrapper, try editing the distributionUrl in 
+E:\androidlearn\ftp\sun3\gradle\wrapper\gradle-wrapper.properties to gradle-1.10-all.zip.
+Please fix the project's Gradle settings.
+<a href="openGradleSettings">Gradle settings</a>
+解决方法：no
+
+21.
+Gradle version 1.10 is required. Current version is 2.2. If using the gradle wrapper, try editing the distributionUrl in 
+E:\androidlearn\ftp\sun3\app\gradle\wrapper\gradle-wrapper.properties to gradle-1.10-all.zip.
+Please fix the project's Gradle settings.Consult IDE log for more details (Help | Show Log)
+解决方法：no
+
+22.
+Could not read script 'E:\androidlearn\ftp\transdroid\signing.gradle' as it does not exist.
+Consult IDE log for more details (Help | Show Log)
+解决方法：no
+
+23.
+Gradle version 1.10 is required. Current version is 2.0. If using the gradle wrapper, try editing the distributionUrl in E:\androidlearn\ftp\transdroid\app\gradle\wrapper\gradle-wrapper.properties to gradle-1.10-all.zip.
+Please fix the project's Gradle settings.Consult IDE log for more details (Help | Show Log)
