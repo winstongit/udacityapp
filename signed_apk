@@ -38,3 +38,37 @@ $ ./gradlew assembleDebug
 生成调试版本)：E:\MyLiB\Android\AndroidAnt\MyBoardCastReciver>ant debug 例如(生成未签名版本)：E:\MyLiB\Android\AndroidAnt\MyBoardCastReciver>ant release    参考：http://www.cnblogs.com/tankaixiong/archive/2010/11/24/1887156.html    二、keystore制作   Apk签名首先要有一个keystore的签名用的文件。  
 
 -alias 后面跟的是别名这里是 asaiAndroid.store 
+
+
+1.分析app/build/gradle文件
+
+2.create file signing.gradle
+android {
+    signingConfigs { 
+        release {
+            storeFile file("..")
+            storePassword ".."
+            keyAlias ".."
+            keyPassword ".."
+        }
+        flavor2 {
+            storeFile file("..")
+            storePassword ".."
+            keyAlias ".."
+            keyPassword ".."
+        }
+    }
+}
+
+
+Could not find property 'STORE_FILE' on SigningConfigDsl_Decorated{name=release, 
+storeFile=E:\androidlearn\ftp\transdroid, 
+storePassword=.., 
+keyAlias=.., 
+keyPassword=.., 
+storeType=E:\androidlearn\ftp\transdroid}.
+
+Could not find property 'STORE_FILE' on SigningConfigDsl_Decorated{name=release, storeFile=E:\androidlearn\ftp\transdroid\app\1, storePassword=2, keyAlias=3, keyPassword=4, storeType=E:\androidlearn\ftp\transdroid\app\1}.
+
+Could not find property 'STORE_FILE' on SigningConfigDsl_Decorated{name=release, storeFile=null, storePassword=null, keyAlias=null, keyPassword=null, storeType=null}.
+Consult IDE log for more details (Help | Show Log)
