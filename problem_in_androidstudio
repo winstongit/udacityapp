@@ -8,7 +8,9 @@ C:\Program Files\Java\jdk1.7.0_09\bin
 classpath 'com.android.tools.build:gradle:0.12.+'为        classpath 'com.android.tools.build:gradle:0.14.4'
 
 修改E:\androidlearn\ftp\sun1\gradle\wrapper\gradle-wrapper.properties		
-distributionUrl=http\://services.gradle.org/distributions/gradle-2.0-all.zip改为distributionUrl=https\://services.gradle.org/distributions/gradle-2.2-all.zip
+distributionUrl=http\://services.gradle.org/distributions/gradle-2.0-all.zip
+改为
+distributionUrl=https\://services.gradle.org/distributions/gradle-2.2-all.zip
 
 
 
@@ -168,5 +170,5 @@ java.lang.IllegalStateException: Cannot locate factory for objects of type Defau
 	at java.lang.Thread.run(Thread.java:722)
 	at com.intellij.openapi.application.impl.ApplicationImpl$1$1.run(ApplicationImpl.java:149)
 
-The project is using an unsupported version of Gradle.
+28.The project is using an unsupported version of Gradle.
 Please point to a supported Gradle version in the project's Gradle settings or in the project's Gradle wrapper (if applicable.)
