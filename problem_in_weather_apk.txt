@@ -240,3 +240,70 @@ at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:15
             at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1584)
 12-01 12:32:24.157  25274-25291/com.example.android.sunshine.app I/TestRunner﹕ ----- end exception -----
 解决方法：没
+
+10.最新的代码4.14无法编译，报错
+ .add(R.id.container,new ForecastFragment())
+E:\androidlearn\code\udacode\app\src\main\java\com\weathercast\MyActivity.java:25: 错误: 对于add(int,ForecastFragment), 找不到合适的方法
+                    .add(12,new ForecastFragment())
+                    ^
+    方法 FragmentTransaction.add(Fragment,String)不适用
+      (参数不匹配; int无法转换为Fragment)
+    方法 FragmentTransaction.add(int,Fragment)不适用
+      (参数不匹配; ForecastFragment无法转换为Fragment)
+注: E:\androidlearn\code\udacode\app\src\main\java\com\weathercast\SettingsActivity.java使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+注: 某些消息已经过简化; 请使用 -Xdiags:verbose 重新编译以获得完整输出
+1 个错误
+ FAILED
+FAILURE: Build failed with an exception.
+* What went wrong:
+Execution failed for task ':app:compileDebugJava'.
+> Compilation failed; see the compiler error output for details.
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+BUILD FAILED
+之前的是什么？？怎么追溯历史的错误？改为getSupportFragmentManager().beginTransaction()就好了
+按照app的build.gradle中定义的compileSdkVersion和buildToolsVersion配置androidstudio的gradle版本，否则会出现api接口函数参数不一致问题及编译不过等问题。
+
+11.新软件运行会异常退出，
+不知道为什么运行不报错误了！！
+12-03 09:53:21.864  12868-12868/com.weathercast D/ActivityThread﹕ setTargetHeapUtilization:0.25
+12-03 09:53:21.864  12868-12868/com.weathercast D/ActivityThread﹕ setTargetHeapIdealFree:8388608
+12-03 09:53:21.864  12868-12868/com.weathercast D/ActivityThread﹕ setTargetHeapConcurrentStart:2097152
+12-03 09:53:22.085  12868-12868/com.weathercast I/ActivityThread﹕ Pub com.weathercast.app: com.weathercast.data.WeatherProvider
+12-03 09:53:22.345  12868-12903/com.weathercast E/dalvikvm﹕ threadid=12: created from interp,name=SharedPreferencesImpl-load
+12-03 09:53:22.345  12868-12903/com.weathercast E/dalvikvm﹕ threadid=12: calling run(),name=SharedPreferencesImpl-load
+12-03 09:53:22.345  12868-12903/com.weathercast E/dalvikvm﹕ threadid=12: exiting,name=SharedPreferencesImpl-load
+12-03 09:53:22.345  12868-12905/com.weathercast E/dalvikvm﹕ threadid=12: created from interp,name=ModernAsyncTask #1
+12-03 09:53:22.345  12868-12905/com.weathercast E/dalvikvm﹕ threadid=12: calling run(),name=ModernAsyncTask #1
+12-03 09:53:22.345  12868-12907/com.weathercast E/dalvikvm﹕ threadid=13: created from interp,name=AsyncTask #1
+12-03 09:53:22.345  12868-12905/com.weathercast E/ActivityThread﹕ Failed to find provider info for com.weathercast
+12-03 09:53:22.355  12868-12907/com.weathercast E/dalvikvm﹕ threadid=13: calling run(),name=AsyncTask #1
+12-03 09:53:22.405  12868-12868/com.weathercast I/Adreno200-EGL﹕ <qeglDrvAPI_eglInitialize:294>: EGL 1.4 QUALCOMM build:  (CL3090659)
+    Build Date: 09/03/13 Tue
+    Local Branch:
+    Remote Branch:
+    Local Patches:
+    Reconstruct Branch:
+12-03 09:54:07.223  12868-13419/com.weathercast E/dalvikvm﹕ threadid=14: created from interp,name=ModernAsyncTask #2
+12-03 09:54:07.223  12868-13419/com.weathercast E/dalvikvm﹕ threadid=14: calling run(),name=ModernAsyncTask #2
+12-03 09:54:07.233  12868-13419/com.weathercast E/ActivityThread﹕ Failed to find provider info for com.weathercast
+12-03 09:54:30.998  12868-13560/com.weathercast E/dalvikvm﹕ threadid=15: created from interp,name=ModernAsyncTask #3
+12-03 09:54:30.998  12868-13560/com.weathercast E/dalvikvm﹕ threadid=15: calling run(),name=ModernAsyncTask #3
+12-03 09:54:31.008  12868-13560/com.weathercast E/ActivityThread﹕ Failed to find provider info for com.weathercast
+12-03 09:54:56.666  12868-13756/com.weathercast E/dalvikvm﹕ threadid=16: created from interp,name=ModernAsyncTask #4
+12-03 09:54:56.666  12868-13756/com.weathercast E/dalvikvm﹕ threadid=16: calling run(),name=ModernAsyncTask #4
+12-03 09:54:56.666  12868-13756/com.weathercast E/ActivityThread﹕ Failed to find provider info for com.weathercast
+12-03 09:55:06.136  12868-13782/com.weathercast E/dalvikvm﹕ threadid=17: created from interp,name=pool-1-thread-1
+12-03 09:55:06.136  12868-13782/com.weathercast E/dalvikvm﹕ threadid=17: calling run(),name=pool-1-thread-1
+12-03 09:55:09.569  12868-12868/com.weathercast W/IInputConnectionWrapper﹕ getTextAfterCursor on inactive InputConnection
+12-03 09:55:09.569  12868-12868/com.weathercast W/IInputConnectionWrapper﹕ getTextBeforeCursor on inactive InputConnection
+12-03 09:55:09.569  12868-12868/com.weathercast W/IInputConnectionWrapper﹕ getTextAfterCursor on inactive InputConnection
+12-03 09:55:09.569  12868-12868/com.weathercast W/IInputConnectionWrapper﹕ getTextBeforeCursor on inactive InputConnection
+12-03 09:55:10.901  12868-13806/com.weathercast E/dalvikvm﹕ threadid=18: created from interp,name=ModernAsyncTask #5
+12-03 09:55:10.901  12868-13806/com.weathercast E/dalvikvm﹕ threadid=18: calling run(),name=ModernAsyncTask #5
+12-03 09:55:10.901  12868-13806/com.weathercast E/ActivityThread﹕ Failed to find provider info for com.weathercast
+12-03 09:55:17.608  12868-12905/com.weathercast E/ActivityThread﹕ Failed to find provider info for com.weathercast
+12-03 09:55:26.107  12868-13419/com.weathercast E/ActivityThread﹕ Failed to find provider info for com.weathercast
+12-03 09:55:54.187  12868-13560/com.weathercast E/ActivityThread﹕ Failed to find provider info for com.weathercast
+12-03 09:56:09.904  12868-13756/com.weathercast E/ActivityThread﹕ Failed to find provider info for com.weathercast
