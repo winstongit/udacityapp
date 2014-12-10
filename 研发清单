@@ -1,8 +1,5 @@
-1.快速部署Python应用:采用Nginx+uWSGI
-Nginx Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器
-uWSGI 基于Python的Web项目部署，据说该协议大约是fcgi协议的10倍那么快,wsgi。
-uWSGI的主要特点如下：◆超快的性能。◆低内存占用（实测为apache2的mod_wsgi的一半左右）。◆多app管理。
-◆详尽的日志功能（可以用来分析app性能和瓶颈）。◆高度可定制（内存大小限制，服务一定次数后重启等）。
+1.Nginx Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。性能高效，非常适合搭建服务器。
+(快速部署Python应用:采用Nginx+uWSGI.uWSGI的主特点：◆超快的性能。◆低内存占用◆多app管理。详尽的日志功能。◆高度可定制)
 
 2.gitlab 
 GitLab 是一个用于仓库管理系统的开源项目。使用Git作为代码管理工具，并在此基础上搭建起来的web服务。
