@@ -14,8 +14,15 @@ getSupportFragmentManager().beginTransaction()改成 getFragmentManager().beginT
 
 3.无法显示深圳天气
 天气预报网站深圳天气的jason查询：
-http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7
+查看深圳天气：1795565
+set_cookie('cityid', 1795565, expires);	
+//$.getJSON("http://api.openweathermap.org/data/2.5/weather?callback=?&id=1795565&units=metric", showCurrentCity).error(errorHandler);
+$.getJSON("http://api.openweathermap.org/data/2.5/forecast?callback=?&id=1795565&units=metric", showForecast).error(errorHandler);
+$.getJSON("http://api.openweathermap.org/data/2.5/forecast/daily?callback=?&id=1795565&units=metric&cnt=14", showForecastDaily).error(errorHandler);
 [ 114.07, 22.55 ] 114072255
+
+天气预报默认的美国地址：
+http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7
 
 4.机顶盒谷歌play搜索不到谷歌地图，电脑无法下载谷歌地图apk.
 解决方法一：手机安装谷歌地图，使用360手机助手导出谷歌地图apk。（已验证）
@@ -24,6 +31,7 @@ http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=me
 5.添加map location后，发现无法加载地图
 解决方法:安装google地图后可以显示地图，但是无法正常定位城市坐标。
 判断不能准确定位坐标的原因是谷歌地图需要翻墙使用。
+另外中国城市id无法使用google地图定位。
 
 6.Error:(75, 55) 错误: 找不到符号 符号:   变量 detail_txt位置: 类 id
 Error:(86, 51) 错误: 找不到符号 符号:   变量 action_share
@@ -82,7 +90,65 @@ Error:Execution failed for task ':app:compileDebugJava'.
 Changes not staged for commit:
 解决方法：没有切换分支，导致修改没有传到服务器。发现很多冗余的文件已经上传到服务器，下次注意.ignore文件。
 
+14.编译报错
+最新的代码4.14无法编译，报错
+ .add(R.id.container,new ForecastFragment())
+E:\androidlearn\code\udacode\app\src\main\java\com\weathercast\MyActivity.java:25: 错误: 对于add(int,ForecastFragment), 找不到合适的方法
+                    .add(12,new ForecastFragment())
+                    ^
+    方法 FragmentTransaction.add(Fragment,String)不适用
+      (参数不匹配; int无法转换为Fragment)
+    方法 FragmentTransaction.add(int,Fragment)不适用
+      (参数不匹配; ForecastFragment无法转换为Fragment)
+注: E:\androidlearn\code\udacode\app\src\main\java\com\weathercast\SettingsActivity.java使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+注: 某些消息已经过简化; 请使用 -Xdiags:verbose 重新编译以获得完整输出
+1 个错误
+ FAILED
+FAILURE: Build failed with an exception.
+* What went wrong:
+Execution failed for task ':app:compileDebugJava'.
+> Compilation failed; see the compiler error output for details.
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+BUILD FAILED
+之前的是什么？？怎么追溯历史的错误？
+解决方法：包类名称有错，按照app的build.gradle中定义的compileSdkVersion和buildToolsVersion配置androidstudio的gradle版本，否则会出现api接口函数参数不一致问题及编译不过等问题。
+改为getSupportFragmentManager().beginTransaction()就好了
 
+15.程序会崩溃
+check latest version code ,some time crash
+12-10 08:55:32.405    5259-5277/com.weathercast E/AndroidRuntime﹕ FATAL EXCEPTION: AsyncTask #1
+    java.lang.RuntimeException: An error occured while executing doInBackground()
+            at android.os.AsyncTask$3.done(AsyncTask.java:299)
+            at java.util.concurrent.FutureTask$Sync.innerSetException(FutureTask.java:273)
+            at java.util.concurrent.FutureTask.setException(FutureTask.java:124)
+            at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:307)
+            at java.util.concurrent.FutureTask.run(FutureTask.java:137)
+            at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:230)
+            at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1076)
+            at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:569)
+            at java.lang.Thread.run(Thread.java:856)
+     Caused by: java.lang.NullPointerException
+            at com.weathercast.FetchWeatherTask.addLocation(FetchWeatherTask.java:110)
+            at com.weathercast.FetchWeatherTask.getWeatherDataFromJson(FetchWeatherTask.java:179)
+            at com.weathercast.FetchWeatherTask.doInBackground(FetchWeatherTask.java:367)
+            at com.weathercast.FetchWeatherTask.doInBackground(FetchWeatherTask.java:35)
+            at android.os.AsyncTask$2.call(AsyncTask.java:287)
+            at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:305)
+            at java.util.concurrent.FutureTask.run(FutuFetchWeatherTask.java:110reTask.java:137)
+            at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:230)
+            at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1076)
+            at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:569)
+            at java.lang.Thread.run(Thread.java:856)
+修改app/build.gradle为以下内容就可以
+buildToolsVersion "20.0.0"
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:20.0.0'
+    compile 'com.android.support:support-v4:20.0.0'
+    
+---------------------------------------------------------------------------------------------------------------------    
 没解决的问题：
 1.工程使用客户的指定gradle（use customizable gradle wrapper）
 遇到问题Unknown host 'downloads.gradle.org'.Consult IDE log for more details (Help | Show Log)
@@ -241,31 +307,7 @@ at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:15
 12-01 12:32:24.157  25274-25291/com.example.android.sunshine.app I/TestRunner﹕ ----- end exception -----
 解决方法：没
 
-10.最新的代码4.14无法编译，报错
- .add(R.id.container,new ForecastFragment())
-E:\androidlearn\code\udacode\app\src\main\java\com\weathercast\MyActivity.java:25: 错误: 对于add(int,ForecastFragment), 找不到合适的方法
-                    .add(12,new ForecastFragment())
-                    ^
-    方法 FragmentTransaction.add(Fragment,String)不适用
-      (参数不匹配; int无法转换为Fragment)
-    方法 FragmentTransaction.add(int,Fragment)不适用
-      (参数不匹配; ForecastFragment无法转换为Fragment)
-注: E:\androidlearn\code\udacode\app\src\main\java\com\weathercast\SettingsActivity.java使用或覆盖了已过时的 API。
-注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
-注: 某些消息已经过简化; 请使用 -Xdiags:verbose 重新编译以获得完整输出
-1 个错误
- FAILED
-FAILURE: Build failed with an exception.
-* What went wrong:
-Execution failed for task ':app:compileDebugJava'.
-> Compilation failed; see the compiler error output for details.
-* Try:
-Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
-BUILD FAILED
-之前的是什么？？怎么追溯历史的错误？改为getSupportFragmentManager().beginTransaction()就好了
-按照app的build.gradle中定义的compileSdkVersion和buildToolsVersion配置androidstudio的gradle版本，否则会出现api接口函数参数不一致问题及编译不过等问题。
-
-11.新软件运行会异常退出，
+10.新软件运行会异常退出，
 不知道为什么运行不报错误了！！
 12-03 09:53:21.864  12868-12868/com.weathercast D/ActivityThread﹕ setTargetHeapUtilization:0.25
 12-03 09:53:21.864  12868-12868/com.weathercast D/ActivityThread﹕ setTargetHeapIdealFree:8388608
@@ -307,3 +349,6 @@ BUILD FAILED
 12-03 09:55:26.107  12868-13419/com.weathercast E/ActivityThread﹕ Failed to find provider info for com.weathercast
 12-03 09:55:54.187  12868-13560/com.weathercast E/ActivityThread﹕ Failed to find provider info for com.weathercast
 12-03 09:56:09.904  12868-13756/com.weathercast E/ActivityThread﹕ Failed to find provider info for com.weathercast
+
+11.最新的4.14无法运行测试程序
+
