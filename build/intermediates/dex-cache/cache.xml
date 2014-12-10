@@ -2,18 +2,32 @@
 <items version="2" >
 
     <item
-        jar="D:\system\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jar="E:\androidlearn\code\uda\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
-        <dex dex="E:\androidlearn\code\udacode\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-780b4b1bab83722a54758204ebc5f75af927878d.jar" />
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef">
+        <dex dex="E:\androidlearn\code\uda\app\build\intermediates\pre-dexed\debug\classes-ed5f818915c7dde2c7aa7ae3ddc9859389617935.jar" />
     </item>
     <item
-        jar="E:\androidlearn\code\udacode\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
+        jar="D:\system\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
-        <dex dex="E:\androidlearn\code\udacode\app\build\intermediates\pre-dexed\debug\classes-89873e776a0d522d778be355c0f213bca9049b74.jar" />
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
+        <dex dex="E:\androidlearn\code\uda\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-132024534c5b9ff38a694afaef48f57e6250de27.jar" />
+    </item>
+    <item
+        jar="E:\androidlearn\code\uda\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
+        <dex dex="E:\androidlearn\code\uda\app\build\intermediates\pre-dexed\debug\classes-296cf1d793e81d10ee54124d75e1f9e5f86ed730.jar" />
+    </item>
+    <item
+        jar="E:\androidlearn\code\uda\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
+        <dex dex="E:\androidlearn\code\uda\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-73b8ff105c1aa40be319cb62e7bae62624321527.jar" />
     </item>
 
 </items>
