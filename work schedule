@@ -73,7 +73,7 @@ check latest version code ,some time crash
 2.Already disposed: Module:
 
 3.androidstudio如何开多个窗口，打开多个工程
-使用file->new->
+使用file->open->选择工程->提示是否使用新窗口打开。
 
 4.差别
         mavenCentral()
