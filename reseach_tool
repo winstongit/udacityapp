@@ -1,3 +1,30 @@
+1.Nginx Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。性能高效，非常适合搭建服务器。
+(快速部署Python应用:采用Nginx+uWSGI.uWSGI的主特点：◆超快的性能。◆低内存占用◆多app管理。详尽的日志功能。◆高度可定制)
+
+2.gitlab 
+GitLab 是一个用于仓库管理系统的开源项目。使用Git作为代码管理工具，并在此基础上搭建起来的web服务。
+安装要求：Ubuntu（推荐,内存至少2G）ruby 1.9.3+ MySQL git gitolite redis 
+安装方法：参考GitLab在GitHub上的Wiki页面https://about.gitlab.com/downloads/
+下载及安装命令：wget https://downloads-packages.s3.amazonaws.com/ubuntu-12.04/gitlab_7.5.3-omnibus.5.2.1.ci-1_amd64.deb
+sudo apt-get install openssh-server
+sudo apt-get install postfix # Select 'Internet Site', using sendmail instead also works, exim has problems
+sudo dpkg -i gitlab_7.5.3-omnibus.5.2.1.ci-1_amd64.deb
+配置及启动gitlab:sudo gitlab-ctl reconfigure
+登陆gitlab:Username: root Password: 5iveL!fe
+
+3.版本控制git/svn
+
+4.Java, Ant
+
+5.Python2.7 
+Python（英语发音：/?pa?θ?n/）, 是一种面向对象、解释型计算机程序设计语言，由Guido van Rossum于1989年底发明，第一个公开发行版发行于1991年。Python语法简洁而清晰，
+具有丰富和强大的类库。它常被昵称为胶水语言，它能够把用其他语言制作的各种模块（尤其是C/C++）很轻松地联结在一起。常见的一种应用情形是，使用Python快速生成程序的原型
+（有时甚至是程序的最终界面），然后对其中有特别要求的部分，用更合适的语言改写，比如3D游戏中的图形渲染模块，性能要求特别高，就可以用C++重写.
+>Django1.4
+http://djangobook.py3k.cn/2.0/ User Link
+
+以下技术知道即可。
+----------------------------------------------------------------------------------------------------
 pip 
 A tool for installing and managing Python packages.
 
@@ -13,34 +40,9 @@ vim
 
 zsh + oh-my-zsh Zsh是一个Linux用户很少使用的power-shell，这是由于大多数Linux产品安装，以及默认使用bash shell。几乎每一款Linux产品都包含有zsh，通常可以用apt-get、urpmi或yum进行安装
 
-Python2.7 
-Python（英语发音：/?pa?θ?n/）, 是一种面向对象、解释型计算机程序设计语言，由Guido van Rossum于1989年底发明，第一个公开发行版发行于1991年。Python语法简洁而清晰，
-具有丰富和强大的类库。它常被昵称为胶水语言，它能够把用其他语言制作的各种模块（尤其是C/C++）很轻松地联结在一起。常见的一种应用情形是，使用Python快速生成程序的原型
-（有时甚至是程序的最终界面），然后对其中有特别要求的部分，用更合适的语言改写，比如3D游戏中的图形渲染模块，性能要求特别高，就可以用C++重写.
->Django1.4
-http://djangobook.py3k.cn/2.0/ User Link
-
 web.py web.py 是一个轻量级Python web框架，它简单而且功能大。web.py是一个开源项目。该框架由美国作家、Reddit联合创始人、RSS规格合作创造者、著名计算机黑客Aaron Swartz开发。web.py目前已被很多家大型网站所使用
 
 node.js 是一个基于Chrome JavaScript 运行时建立的一个平台， 用来方便地搭建快速的 易于扩展的网络应用· Node.js 借助事件驱动， 非阻塞I/O 模型变得轻量和高效， 非常适合 运行在分布式设备 的 数据密集型 的实时应用Ubuntu/Gentoo/Centos
 
 ipython
-
-版本控制git/svn
-
-gitlab GitLab 是一个用于仓库管理系统的开源项目。使用Git作为代码管理工具，并在此基础上搭建起来的web服务。
-安装要求：
-Ubuntu/Debian（推荐这2个系统，也可以安装到CentOS系统中，并且在GitHub上有CentOS的GitLab一键安装脚本）
-ruby 1.9.3+ MySQL git gitolite redis 
-安装方法：参考GitLab在GitHub上的Wiki页面。
-https://about.gitlab.com/downloads/
-Nginx Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器
-uWSGI 基于Python的Web项目部署，据说该协议大约是fcgi协议的10倍那么快,wsgi。
-uWSGI的主要特点如下：
-◆超快的性能。
-◆低内存占用（实测为apache2的mod_wsgi的一半左右）。
-◆多app管理。
-◆详尽的日志功能（可以用来分析app性能和瓶颈）。
-◆高度可定制（内存大小限制，服务一定次数后重启等）。
-Salary: $135,000 to $165,000
-需求技能： Java, Ant
+----------------------------------------------------------------------------------------------------

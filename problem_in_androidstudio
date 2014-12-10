@@ -3,18 +3,6 @@ android studio
 一.学习的基本配置文档，搞好各种参数的基本配置，熟练使用。
 C:\Program Files\Java\jdk1.7.0_09\bin
 
-
-修改E:\androidlearn\ftp\sun1\build.gradle
-classpath 'com.android.tools.build:gradle:0.12.+'为        classpath 'com.android.tools.build:gradle:0.14.4'
-
-修改E:\androidlearn\ftp\sun1\gradle\wrapper\gradle-wrapper.properties		
-distributionUrl=http\://services.gradle.org/distributions/gradle-2.0-all.zip
-改为
-distributionUrl=https\://services.gradle.org/distributions/gradle-2.2-all.zip
-
-
-
-
 二.problems meet in weather android studio:
 1.代码不自动补全
 解决方法：
@@ -174,3 +162,19 @@ java.lang.IllegalStateException: Cannot locate factory for objects of type Defau
 Please point to a supported Gradle version in the project's Gradle settings or in the project's Gradle wrapper (if applicable.)
 
 29.SDK location not found. Define location with sdk.dir in the local.properties file or with an ANDROID_HOME environment variable.
+
+
+30.同一个project导入多个module,遇到此问题Already disposed: Module:
+
+31.androidstudio如何开多个窗口，打开多个工程？
+解决方法：使用file->open->选择工程->提示是否使用新窗口打开。
+
+32.mavenCentral()与jcenter()究竟有什么差别/
+待查明
+
+33.FTP代码无法编译。
+解决方法：a.修改E:\androidlearn\ftp\sun1\build.gradle
+classpath 'com.android.tools.build:gradle:0.12.+'为        classpath 'com.android.tools.build:gradle:0.14.4'
+b.修改E:\androidlearn\ftp\sun1\gradle\wrapper\gradle-wrapper.properties		
+distributionUrl=http\://services.gradle.org/distributions/gradle-2.0-all.zip
+改为distributionUrl=https\://services.gradle.org/distributions/gradle-2.2-all.zip
