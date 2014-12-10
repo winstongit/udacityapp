@@ -174,3 +174,12 @@ java.lang.IllegalStateException: Cannot locate factory for objects of type Defau
 Please point to a supported Gradle version in the project's Gradle settings or in the project's Gradle wrapper (if applicable.)
 
 29.SDK location not found. Define location with sdk.dir in the local.properties file or with an ANDROID_HOME environment variable.
+
+
+30.同一个project导入多个module,遇到此问题Already disposed: Module:
+
+31.androidstudio如何开多个窗口，打开多个工程？
+解决方法：使用file->open->选择工程->提示是否使用新窗口打开。
+
+32.mavenCentral()与jcenter()究竟有什么差别/
+待查明
