@@ -41,41 +41,4 @@
 1.solve the compile problem
 
 2014/12/10
-1.uda代码报错如下：
-check latest version code ,some time crash
-12-10 08:55:32.405    5259-5277/com.weathercast E/AndroidRuntime﹕ FATAL EXCEPTION: AsyncTask #1
-    java.lang.RuntimeException: An error occured while executing doInBackground()
-            at android.os.AsyncTask$3.done(AsyncTask.java:299)
-            at java.util.concurrent.FutureTask$Sync.innerSetException(FutureTask.java:273)
-            at java.util.concurrent.FutureTask.setException(FutureTask.java:124)
-            at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:307)
-            at java.util.concurrent.FutureTask.run(FutureTask.java:137)
-            at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:230)
-            at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1076)
-            at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:569)
-            at java.lang.Thread.run(Thread.java:856)
-     Caused by: java.lang.NullPointerException
-            at com.weathercast.FetchWeatherTask.addLocation(FetchWeatherTask.java:110)
-            at com.weathercast.FetchWeatherTask.getWeatherDataFromJson(FetchWeatherTask.java:179)
-            at com.weathercast.FetchWeatherTask.doInBackground(FetchWeatherTask.java:367)
-            at com.weathercast.FetchWeatherTask.doInBackground(FetchWeatherTask.java:35)
-            at android.os.AsyncTask$2.call(AsyncTask.java:287)
-            at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:305)
-            at java.util.concurrent.FutureTask.run(FutureTask.java:137)
-            at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:230)
-            at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1076)
-            at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:569)
-            at java.lang.Thread.run(Thread.java:856)
-            
-            
-            
-
-2.Already disposed: Module:
-
-3.androidstudio如何开多个窗口，打开多个工程
-使用file->open->选择工程->提示是否使用新窗口打开。
-
-4.差别
-        mavenCentral()
-        jcenter()
-
+1.更新4.14，测试后不再crash
