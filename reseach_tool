@@ -1,7 +1,10 @@
-1.Nginx Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。性能高效，非常适合搭建服务器。
+一开发工具（软硬件）：
+1.MacBook Pro 1个ssd（>250G).
+2.iTerm 
+3.Sublime Text
+4.Nginx Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。性能高效，非常适合搭建服务器。
 (快速部署Python应用:采用Nginx+uWSGI.uWSGI的主特点：◆超快的性能。◆低内存占用◆多app管理。详尽的日志功能。◆高度可定制)
-
-2.gitlab 
+5.版本控制svn/git/gitlab 
 GitLab 是一个用于仓库管理系统的开源项目。使用Git作为代码管理工具，并在此基础上搭建起来的web服务。
 安装要求：Ubuntu（推荐,内存至少2G）ruby 1.9.3+ MySQL git gitolite redis 
 安装方法：参考GitLab在GitHub上的Wiki页面https://about.gitlab.com/downloads/
@@ -11,38 +14,44 @@ sudo apt-get install postfix # Select 'Internet Site', using sendmail instead al
 sudo dpkg -i gitlab_7.5.3-omnibus.5.2.1.ci-1_amd64.deb
 配置及启动gitlab:sudo gitlab-ctl reconfigure
 登陆gitlab:Username: root Password: 5iveL!fe
-
-3.版本控制git/svn
-
-4.Java, Ant
-
-5.Python2.7 
+6.Java, Ant
+7.Python2.7 
 Python（英语发音：/?pa?θ?n/）, 是一种面向对象、解释型计算机程序设计语言，由Guido van Rossum于1989年底发明，第一个公开发行版发行于1991年。Python语法简洁而清晰，
 具有丰富和强大的类库。它常被昵称为胶水语言，它能够把用其他语言制作的各种模块（尤其是C/C++）很轻松地联结在一起。常见的一种应用情形是，使用Python快速生成程序的原型
 （有时甚至是程序的最终界面），然后对其中有特别要求的部分，用更合适的语言改写，比如3D游戏中的图形渲染模块，性能要求特别高，就可以用C++重写.
 >Django1.4
 http://djangobook.py3k.cn/2.0/ User Link
-
-以下技术知道即可。
 ----------------------------------------------------------------------------------------------------
+以下软件或工具知道即可。
 pip 
 A tool for installing and managing Python packages.
-
 Vagrant 
 Vagrant是一个基于Ruby的工具，用于创建和部署虚拟化开发环境。它 使用Oracle的开源VirtualBox虚拟化系统，使用 Chef创建自动化虚拟环境
-
 tmux 
 tmux是一个优秀的终端复用软件，类似GNU Screen，但来自于OpenBSD，采用BSD授权。使用它最直观的好处就是，通过一个终端登录远程主机并运行tmux后，在其中可以开启多个控制台而无需再“浪费”多余的终端来连接这台远程主机；当然其功能远不止于此。
-
 screen  
-
 vim
-
+http://www.openvim.com/tutorial.html
+http://socialmatchbox.com/wp/learn-to-code-learn-programming/cheat-sheets/vi-cheat-sheet/
 zsh + oh-my-zsh Zsh是一个Linux用户很少使用的power-shell，这是由于大多数Linux产品安装，以及默认使用bash shell。几乎每一款Linux产品都包含有zsh，通常可以用apt-get、urpmi或yum进行安装
-
 web.py web.py 是一个轻量级Python web框架，它简单而且功能大。web.py是一个开源项目。该框架由美国作家、Reddit联合创始人、RSS规格合作创造者、著名计算机黑客Aaron Swartz开发。web.py目前已被很多家大型网站所使用
-
 node.js 是一个基于Chrome JavaScript 运行时建立的一个平台， 用来方便地搭建快速的 易于扩展的网络应用· Node.js 借助事件驱动， 非阻塞I/O 模型变得轻量和高效， 非常适合 运行在分布式设备 的 数据密集型 的实时应用Ubuntu/Gentoo/Centos
-
 ipython
 ----------------------------------------------------------------------------------------------------
+
+二开发资源
+CODE PRACTICE (ALL LANGUAGES)
+Learning to code is just the beginning.  You have to apply what you have learned and grow.  Here are a few resources to help:
+/r/dailyprogrammer – a laundry list of programming exercises via Reddit rated for difficulty level.
+CodeKata – Practice in software development through short coding exercises.
+CodeWars - Practice with competition and gamification.
+Excercism.io – daily exercises to work on for any language with feedback from other developers.
+Project Euler – a series of challenging mathematical/computer programming problems.
+Ruby Programming Challenge for Newbies – WYSIWYG.
+HackerRank Daily Challenges – more challenges with a leaderboard.
+
+三编程资料
+Github book
+https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md#professional-development
+learn-to-code-learn-programming
+http://socialmatchbox.com/wp/learn-to-code-learn-programming/
