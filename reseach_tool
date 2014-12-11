@@ -1,10 +1,30 @@
-一开发工具（软硬件）：
+一技术资讯
+1.hacker news
+https://news.ycombinator.com/
+2.pycoder周报
+http://pycoders.com/archive/
+3.infoQ
+http://www.infoq.com/cn
+4.csdn
+http://geek.csdn.net/
+5.startup news
+http://news.dbanotes.net/
+6.计算机安全和黑客
+http://www.freebuf.com/
+7.DVB
+http://www.dvbcn.com/
+
+二开发工具（软硬件）：
+android开发软硬件
 1.MacBook Pro 1个ssd（>250G).
-2.iTerm 
-3.Sublime Text
-4.Nginx Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。性能高效，非常适合搭建服务器。
+2.androidstudio +sdk
+
+常用软件
+1.iTerm 
+2.Sublime Text
+3.Nginx Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。性能高效，非常适合搭建服务器。
 (快速部署Python应用:采用Nginx+uWSGI.uWSGI的主特点：◆超快的性能。◆低内存占用◆多app管理。详尽的日志功能。◆高度可定制)
-5.版本控制svn/git/gitlab 
+4.版本控制svn/git/gitlab 
 GitLab 是一个用于仓库管理系统的开源项目。使用Git作为代码管理工具，并在此基础上搭建起来的web服务。
 安装要求：Ubuntu（推荐,内存至少2G）ruby 1.9.3+ MySQL git gitolite redis 
 安装方法：参考GitLab在GitHub上的Wiki页面https://about.gitlab.com/downloads/
@@ -14,8 +34,8 @@ sudo apt-get install postfix # Select 'Internet Site', using sendmail instead al
 sudo dpkg -i gitlab_7.5.3-omnibus.5.2.1.ci-1_amd64.deb
 配置及启动gitlab:sudo gitlab-ctl reconfigure
 登陆gitlab:Username: root Password: 5iveL!fe
-6.Java, Ant
-7.Python2.7 
+5.Java, Ant
+6.Python2.7 
 Python（英语发音：/?pa?θ?n/）, 是一种面向对象、解释型计算机程序设计语言，由Guido van Rossum于1989年底发明，第一个公开发行版发行于1991年。Python语法简洁而清晰，
 具有丰富和强大的类库。它常被昵称为胶水语言，它能够把用其他语言制作的各种模块（尤其是C/C++）很轻松地联结在一起。常见的一种应用情形是，使用Python快速生成程序的原型
 （有时甚至是程序的最终界面），然后对其中有特别要求的部分，用更合适的语言改写，比如3D游戏中的图形渲染模块，性能要求特别高，就可以用C++重写.
@@ -39,7 +59,7 @@ node.js 是一个基于Chrome JavaScript 运行时建立的一个平台， 用�
 ipython
 ----------------------------------------------------------------------------------------------------
 
-二开发资源
+三开发资源
 CODE PRACTICE (ALL LANGUAGES)
 Learning to code is just the beginning.  You have to apply what you have learned and grow.  Here are a few resources to help:
 /r/dailyprogrammer – a laundry list of programming exercises via Reddit rated for difficulty level.
@@ -50,7 +70,7 @@ Project Euler – a series of challenging mathematical/computer programming prob
 Ruby Programming Challenge for Newbies – WYSIWYG.
 HackerRank Daily Challenges – more challenges with a leaderboard.
 
-三编程资料
+四编程资料
 Github book
 https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md#professional-development
 learn-to-code-learn-programming
@@ -59,5 +79,5 @@ http://socialmatchbox.com/wp/learn-to-code-learn-programming/
 http://codingthearchitecture.com/
 面试题库
 http://www.nowcoder.com/170207
-计算机安全和黑客
-http://www.freebuf.com/
+图灵
+http://www.ituring.com.cn/book/1232
