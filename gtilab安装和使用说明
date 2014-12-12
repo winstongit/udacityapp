@@ -1,0 +1,48 @@
+一.gitlab的安装
+1.安装gitlab前的准备工作：
+操作系统：ubuntu 12.04
+内存:至少2G
+硬盘:空仓库占用2G左右。硬盘预留空间至少为仓库的2倍。
+
+查看当前硬盘空间df -hl
+查看每个用户空间du -sh /home/xxx
+删除用户userdel -r xxx
+添加用户adduser xxx
+
+apt-get autoremove
+
+2.安装创建新用户?其实没必要？
+adduser shi
+su -
+visudo
+新增的账户就在下面加上
+test   ALL=(root) NOPASSWD: ALL
+
+3.wget https://downloads-packages.s3.amazonaws.com/ubuntu-12.04/gitlab_7.5.3-omnibus.5.2.1.ci-1_amd64.deb
+(保存链接使用迅雷下载。wget在哪个目录执行，下载的文件就在哪个文件夹)
+sudo apt-get install openssh-server
+sudo apt-get install postfix
+(安装没反应，其实是菜单乱码无法正常显示，可选择对应的配置后保存)
+sudo dpkg -i gitlab_7.5.3-omnibus.5.2.1.ci-1_amd64.deb
+sudo gitlab-ctl reconfigure
+sudo gitlab-ctl status
+
+4.raise "External URL must include a FQDN"
+解决方法：
+sudo vi /etc/gitlab/gitlab.rb
+external_url 'http://ipaddress:10'
+gitlab_rails['gitlab_email_from'] = 'gitlab@thefallenphoenix.net'
+sudo gitlab-ctl reconfigure
+
+5.测试网页登陆正常
+http://ipaddress:10成功！！！！
+Username: root 
+Password: 5iveL!fe
+
+
+二.gitlab的使用
+1.
+git remote rm origin
+git remote add origin 
+
+2.重新生成ssh key
