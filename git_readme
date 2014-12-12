@@ -10,7 +10,7 @@ https://progit2.s3.amazonaws.com/zh/2014-11-16-d449e/progit-zh.138.pdf
 ssh-keygen -t rsa -C "winstongit@gmail.com" 
 eval `ssh-agent -s` 
 ssh-add ~/.ssh/id_rsa
-复制id_rsa的内容到https://github.com/settings/ssh
+复制id_rsa.pub的内容到https://github.com/settings/ssh
 ssh -T git@github.com 验证ssh是否成功配置
 
 配置用户信息:
