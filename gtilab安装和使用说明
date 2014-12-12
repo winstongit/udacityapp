@@ -8,15 +8,14 @@
 查看每个用户空间du -sh /home/xxx
 删除用户userdel -r xxx
 添加用户adduser xxx
+清楚磁盘冗余的软件apt-get autoremove
 
-apt-get autoremove
-
-2.安装创建新用户?其实没必要？
-adduser shi
+2.创建新用户，在新用户目录下安装?其实没必要？
+adduser xxx
 su -
 visudo
 新增的账户就在下面加上
-test   ALL=(root) NOPASSWD: ALL
+xxx   ALL=(root) NOPASSWD: ALL
 
 3.wget https://downloads-packages.s3.amazonaws.com/ubuntu-12.04/gitlab_7.5.3-omnibus.5.2.1.ci-1_amd64.deb
 (保存链接使用迅雷下载。wget在哪个目录执行，下载的文件就在哪个文件夹)
@@ -39,10 +38,10 @@ http://ipaddress:10成功！！！！
 Username: root 
 Password: 5iveL!fe
 
-
 二.gitlab的使用
 1.
 git remote rm origin
 git remote add origin 
 
 2.重新生成ssh key
+ssh-keygen -t rsa -C "$your_email"
