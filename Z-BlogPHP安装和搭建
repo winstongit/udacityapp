@@ -1,4 +1,22 @@
 Z-BlogPHP 1.3 Wonce
+安装环境：
+一.安装XAMPP1.8.1(高版本的会有问题)
+最新版本的XAMPP不知道winxp.下载链接如下：
+https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/1.8.1/
+1.遇到问题
+Error: Apache shutdown unexpectedly.
+PM 05:31:26  [Apache] 	This may be due to a blocked port, missing dependencies, 
+PM 05:31:26  [Apache] 	improper privileges, a crash, or a shutdown by another method.
+PM 05:31:26  [Apache] 	Check the "/xampp/apache/logs/error.log" file
+PM 05:31:26  [Apache] 	and the Windows Event Viewer for more clues
+分析方法：
+cmd运行D:\goodtools\xampp\apache\bin>httpd.exe打印(OS 10048)通常每个套接字地址(协议/网络地址/端口)只允许使用一次。  
+: AH00072: make_sock: could not bind to address 0.0.0.0:443
+解决方法：
+在/xampp/apache/conf/extra/httpd-ssl.conf 把Listen 443 修改为 444（可自定义）
+如果80端口被占用，则在/xampp/apache/conf/extra/httpd.conf 把Listen 80 修改为 88 （可自定义）
 
+二.下载Z-BlogPHP
+Z-BlogPHP_1_3_Wonce_140614.zip
 http://bbs.rainbowsoft.org/thread-84444-1-1.html
-
+复制文件放到D:\goodtools\xampp\htdocs\zblog,本地进行安装http://localhost/zblog。
