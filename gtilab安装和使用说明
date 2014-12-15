@@ -45,3 +45,5 @@ git remote add origin
 
 2.重新生成ssh key
 ssh-keygen -t rsa -C "$your_email"
+
+3.不折腾ssh方式，使用http方式仓库的建立和使用都没有问题。
