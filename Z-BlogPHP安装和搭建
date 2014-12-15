@@ -16,7 +16,12 @@ cmd运行D:\goodtools\xampp\apache\bin>httpd.exe打印(OS 10048)通常每个套�
 在/xampp/apache/conf/extra/httpd-ssl.conf 把Listen 443 修改为 444（可自定义）
 如果80端口被占用，则在/xampp/apache/conf/extra/httpd.conf 把Listen 80 修改为 88 （可自定义）
 
-二.下载Z-BlogPHP
+二.安装和下载Z-BlogPHP
 Z-BlogPHP_1_3_Wonce_140614.zip
 http://bbs.rainbowsoft.org/thread-84444-1-1.html
 复制文件放到D:\goodtools\xampp\htdocs\zblog,本地进行安装http://localhost/zblog。
+遇到问题：(0)UNKNOWN : MySQL DateBase Connection Error. (set_exception_handler)
+分析：
+解决：
+
+http://localhost/zblog/zb_system/login.php
