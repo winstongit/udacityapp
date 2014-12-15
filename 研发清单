@@ -15,11 +15,28 @@ http://www.freebuf.com/
 http://www.dvbcn.com/
 
 二开发工具（软硬件）：
-android开发软硬件
+计划购买的硬件：
 1.MacBook Pro 1个ssd（>250G).
-2.androidstudio +sdk
+2.刀片式台式服务器
+3.域名
+4.虚拟主机
 
 常用软件
+1.Android Studio +sdk
+2.source insight
+3.notpad++
+4.UltraEdit
+5.Beyond Compare 2
+6.SecureCRT
+7.WinSCP
+8.Git bash
+9.VisualSVN
+10.TortoiseSVN
+11.Flash FXP
+12.VLC
+13.Chrom+swithysharp+VPN
+
+开发工具
 1.iTerm 
 2.Sublime Text
 3.Nginx Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。性能高效，非常适合搭建服务器。
@@ -41,6 +58,8 @@ Python（英语发音：/?pa?θ?n/）, 是一种面向对象、解释型计算�
 （有时甚至是程序的最终界面），然后对其中有特别要求的部分，用更合适的语言改写，比如3D游戏中的图形渲染模块，性能要求特别高，就可以用C++重写.
 >Django1.4
 http://djangobook.py3k.cn/2.0/ User Link
+7.PhpMyAdmin
+phpMyAdmin 是一个以PHP为基础，以Web-Base方式架构在网站主机上的MySQL的数据库管理工具，让管理者可用Web接口管理MySQL数据库。
 ----------------------------------------------------------------------------------------------------
 以下软件或工具知道即可。
 pip 
