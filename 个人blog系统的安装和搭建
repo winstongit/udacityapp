@@ -51,9 +51,10 @@ http://bbs.rainbowsoft.org/thread-84444-1-1.html
 2.登陆
 http://localhost/zblog/zb_system/login.php
 
-三安装和下载
-1.安装wordpress遇到问题
-http://localhost/wordpress/wp-admin/setup-config.php?step=2
+三安装和下载wordpress
+1.下载和安装
+wordpress-4.0.1-zh_CN.zip
+2.安装wordpress遇到问题http://localhost/wordpress/wp-admin/setup-config.php?step=2
 数据库连接错误
 您确认您提供的用户名和密码正确么？
 您确认您提供的主机名正确么？
