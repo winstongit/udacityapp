@@ -75,3 +75,18 @@ $cfg['Servers'][$i]['password'] = '';
 2.创建数据库表Databases新建 wordpress仓库，按php图标到user里添加用户
 3.设置wordpress的登陆数据库设置wordpress
 4.安装wordpress成功
+
+总结：
+1.采用wordpress或z-blog搭建个人博客管理系统。
+需要确认的问题：
+a.如何打包我的所有的博客文章和内容备份。
+b.有关插件和归档的问题。
+c.如何提高速度是个问题。
+2.采用csdn的现有资源，这个想法放弃，速度是硬伤。
+http://blog.csdn.net/wanjunyou
+好处：可以兼顾分享人群，做到有来有往。
+坏处：速度比较慢，基本不好打开。
+3.百度云盘
+http://pan.baidu.com/disk/home?fr=ibaidu
+这个只能是存储和整理资源资料，无法做到对个人技术文章的归类和整理。
+经过对比，我决定使用wordpress搭建个人博客系统，整理所有的技术文章和心理成长历程。
