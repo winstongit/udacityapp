@@ -22,24 +22,30 @@ http://www.dvbcn.com/
 4.虚拟主机
 
 常用软件
-1.Android Studio +sdk
-2.source insight
-3.notpad++
-4.UltraEdit
-5.Beyond Compare 2
-6.SecureCRT
-7.WinSCP
-8.Git bash
-9.VisualSVN
-10.TortoiseSVN
-11.Flash FXP
-12.VLC
-13.Chrom+swithysharp+VPN
+1.source insight
+2.notpad++
+3.UltraEdit
+4.Beyond Compare 2
+5.SecureCRT
+6.WinSCP
+7.Git bash
+8.VisualSVN
+9.TortoiseSVN
+10.Flash FXP
+11.VLC
+12.Chrom+swithysharp+VPN
+
+blog软件
+1.XAMPP1.8.1
+2.phpMyAdmin
+3.wordpress（建议采用此软件）
+4.z-blog
 
 开发工具
-1.iTerm 
-2.Sublime Text
-3.Nginx Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。性能高效，非常适合搭建服务器。
+1.Android Studio +sdk
+2.iTerm 
+3.Sublime Text
+4.Nginx Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。性能高效，非常适合搭建服务器。
 (快速部署Python应用:采用Nginx+uWSGI.uWSGI的主特点：◆超快的性能。◆低内存占用◆多app管理。详尽的日志功能。◆高度可定制)
 4.版本控制svn/git/gitlab 
 GitLab 是一个用于仓库管理系统的开源项目。使用Git作为代码管理工具，并在此基础上搭建起来的web服务。
