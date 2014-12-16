@@ -54,27 +54,3 @@
 2.搭建wordpress的个人网站。
 3.dvb的软件问题。
 4.android的软件开发进度推进。
-启动遇到问题：
-AM 09:20:46  [Apache] 	XAMPP Apache is already running on port 80
-AM 09:20:46  [Apache] 	Problem detected!
-AM 09:20:46  [Apache] 	Port 443 in use by "visualsvnserver.exe"!
-AM 09:20:46  [Apache] 	Apache WILL NOT start without the configured ports free!
-AM 09:20:46  [Apache] 	You need to uninstall/disable/reconfigure the blocking application
-AM 09:20:46  [Apache] 	or reconfigure Apache to listen on a different port
-AM 09:20:46  [mysql] 	XAMPP MySQL is already running on port 3306
-解决方法：ctrl+alt+del ，关闭程序visualsvnserver.exe。
-
-记录成功结果：
-AM 09:25:30  [main] 	Initializing Control Panel
-AM 09:25:30  [main] 	Windows Version: Windows XP SP3 32-bit
-AM 09:25:30  [main] 	XAMPP Version: 1.8.1
-AM 09:25:30  [main] 	Control Panel Version: 3.1.0 3.1.0 [ Compiled: September 20th 2012 ]
-AM 09:25:30  [main] 	Running with Administrator rights - good!
-AM 09:25:30  [main] 	XAMPP Installation Directory: "d:\goodtools\xampp\"
-AM 09:25:30  [main] 	Checking for prerequisites
-AM 09:25:30  [main] 	All prerequisites found
-AM 09:25:30  [main] 	Initializing Modules
-AM 09:25:30  [Apache] 	XAMPP Apache is already running on port 80
-AM 09:25:30  [mysql] 	XAMPP MySQL is already running on port 3306
-AM 09:25:30  [main] 	Starting Check-Timer
-AM 09:25:30  [main] 	Control Panel Ready
