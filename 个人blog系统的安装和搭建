@@ -1,0 +1,76 @@
+
+一.安装XAMPP1.8.1(高版本的会有问题)
+最新版本的XAMPP不知道winxp.下载链接如下：
+https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/1.8.1/
+1.遇到问题
+Error: Apache shutdown unexpectedly.
+PM 05:31:26  [Apache] 	This may be due to a blocked port, missing dependencies, 
+PM 05:31:26  [Apache] 	improper privileges, a crash, or a shutdown by another method.
+PM 05:31:26  [Apache] 	Check the "/xampp/apache/logs/error.log" file
+PM 05:31:26  [Apache] 	and the Windows Event Viewer for more clues
+分析方法：cmd运行D:\goodtools\xampp\apache\bin>httpd.exe打印(OS 10048)通常每个套接字地址(协议/网络地址/端口)只允许使用一次。  
+: AH00072: make_sock: could not bind to address 0.0.0.0:443
+这个方法并不好，还是netstat -ano | find “443”，查看是什么占用了端口。
+解决方法：
+在/xampp/apache/conf/extra/httpd-ssl.conf 把Listen 443 修改为 444（可自定义）
+如果80端口被占用，则在/xampp/apache/conf/extra/httpd.conf 把Listen 80 修改为 88 （可自定义）
+
+2启动遇到问题：
+AM 09:20:46  [Apache] 	XAMPP Apache is already running on port 80
+AM 09:20:46  [Apache] 	Problem detected!
+AM 09:20:46  [Apache] 	Port 443 in use by "visualsvnserver.exe"!
+AM 09:20:46  [Apache] 	Apache WILL NOT start without the configured ports free!
+AM 09:20:46  [Apache] 	You need to uninstall/disable/reconfigure the blocking application
+AM 09:20:46  [Apache] 	or reconfigure Apache to listen on a different port
+AM 09:20:46  [mysql] 	XAMPP MySQL is already running on port 3306
+分析方法:netstat -ano | find “443”，查看是什么占用了端口。
+解决方法：ctrl+alt+del ，关闭程序visualsvnserver.exe。
+记录成功结果：
+AM 09:25:30  [main] 	Initializing Control Panel
+AM 09:25:30  [main] 	Windows Version: Windows XP SP3 32-bit
+AM 09:25:30  [main] 	XAMPP Version: 1.8.1
+AM 09:25:30  [main] 	Control Panel Version: 3.1.0 3.1.0 [ Compiled: September 20th 2012 ]
+AM 09:25:30  [main] 	Running with Administrator rights - good!
+AM 09:25:30  [main] 	XAMPP Installation Directory: "d:\goodtools\xampp\"
+AM 09:25:30  [main] 	Checking for prerequisites
+AM 09:25:30  [main] 	All prerequisites found
+AM 09:25:30  [main] 	Initializing Modules
+AM 09:25:30  [Apache] 	XAMPP Apache is already running on port 80
+AM 09:25:30  [mysql] 	XAMPP MySQL is already running on port 3306
+AM 09:25:30  [main] 	Starting Check-Timer
+AM 09:25:30  [main] 	Control Panel Ready
+
+二.安装和下载Z-BlogPHP
+1.下载和安装
+Z-BlogPHP_1_3_Wonce_140614.zip
+http://bbs.rainbowsoft.org/thread-84444-1-1.html
+复制文件放到D:\goodtools\xampp\htdocs\zblog,本地进行安装http://localhost/zblog。
+遇到问题：(0)UNKNOWN : MySQL DateBase Connection Error. (set_exception_handler)
+分析:
+解决：
+2.登陆
+http://localhost/zblog/zb_system/login.php
+
+三安装和下载
+1.安装wordpress遇到问题
+http://localhost/wordpress/wp-admin/setup-config.php?step=2
+数据库连接错误
+您确认您提供的用户名和密码正确么？
+您确认您提供的主机名正确么？
+您确认数据库服务器运行正常么？
+
+2.使用phpMyAdmin创建数据库
+下载3.5.0的phpMyAdmin安装
+安装遇到问题无法登陆的问题？
+1.修改登陆的密码
+修改D:\goodtools\xampp\htdocs\myadmin\libraries\config.default.php
+$cfg['Servers'][$i]['nopassword'] = true;
+修改如下参数没看到具体反应：
+$cfg['Servers'][$i]['AllowNoPassword'] = false;
+$cfg['SQLValidator']['username'] = '';
+$cfg['SQLValidator']['password'] = '';
+$cfg['Servers'][$i]['user'] = 'root';
+$cfg['Servers'][$i]['password'] = '';
+2.创建数据库表Databases新建 wordpress仓库，按php图标到user里添加用户
+3.设置wordpress的登陆数据库设置wordpress
+4.安装wordpress成功
