@@ -109,5 +109,16 @@
 2.解决菜单ota和多媒体提示对话框
 3.release 新软件，待客人确认
 
+2014/12/29
+工作：
+1.编译确认能否移植wifi.
+目前看移植还是有点难度.
+2.使用硬件确认最新的1015 sdk是否能启动？
+需要多做修改测试公版软件。
+对比
+学习：
+1.计划尽快完成udacity的课程。
+2.尽快学习python语言。
+
 winstongit邀请您访问地铁族
 http://www.ditiezu.com/?fromuser=winstongit
