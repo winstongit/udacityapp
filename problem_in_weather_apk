@@ -352,3 +352,33 @@ at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:15
 
 11.最新的4.14无法运行测试程序
 
+12.最新4.14无法显示天气信息
+     Caused by: libcore.io.ErrnoException: recvfrom failed: ECONNRESET (Connection reset by peer)
+            at libcore.io.Posix.recvfromBytes(Native Method)
+            at libcore.io.Posix.recvfrom(Posix.java:131)
+            at libcore.io.BlockGuardOs.recvfrom(BlockGuardOs.java:164)
+            at libcore.io.IoBridge.recvfrom(IoBridge.java:513)
+            at java.net.PlainSocketImpl.read(PlainSocketImpl.java:489)
+            at java.net.PlainSocketImpl.access$000(PlainSocketImpl.java:46)
+            at java.net.PlainSocketImpl$PlainSocketInputStream.read(PlainSocketImpl.java:241)
+            at java.io.InputStream.read(InputStream.java:163)
+            at java.io.BufferedInputStream.fillbuf(BufferedInputStream.java:142)
+            at java.io.BufferedInputStream.read(BufferedInputStream.java:227)
+            at libcore.io.Streams.readAsciiLine(Streams.java:201)
+            at libcore.net.http.HttpEngine.readResponseHeaders(HttpEngine.java:560)
+            at libcore.net.http.HttpEngine.readResponse(HttpEngine.java:813)
+            at libcore.net.http.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:274)
+            at libcore.net.http.HttpURLConnectionImpl.getInputStream(HttpURLConnectionImpl.java:168)
+            at com.example.android.sunshine.app.FetchWeatherTask.doInBackground(FetchWeatherTask.java:341)
+            at com.example.android.sunshine.app.FetchWeatherTask.doInBackground(FetchWeatherTask.java:48)
+            at android.os.AsyncTask$2.call(AsyncTask.java:287)
+            at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:305)
+            at java.util.concurrent.FutureTask.run(FutureTask.java:137)
+            at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:230)
+            at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1076)
+            at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:569)
+            at java.lang.Thread.run(Thread.java:856)
+
+The input and output streams returned by this class are not buffered. Most callers should wrap the returned streams with BufferedInputStream or BufferedOutputStream. Callers that do only bulk reads or writes may omit buffering. When transferring large amounts of data to or from a server, use streams to limit how much data is in memory at once. Unless you need the entire body to be in memory at once, process it as a stream (rather than storing the complete body as a single byte array or string).
+
+To reduce latency, this class may reuse the same underlying Socket for multiple request/response pairs. As a result, HTTP connections may be held open longer than necessary. Calls to disconnect() may return the socket to a pool of connected sockets. This behavior can be disabled by setting the http.keepAlive system property to false before issuing any HTTP requests. The http.maxConnections property may be used to control how many idle connections to each server will be held.
