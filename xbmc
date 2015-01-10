@@ -1,0 +1,76 @@
+
+官网关于android版本配置说明：https://github.com/xbmc/xbmc/blob/master/docs/README.android
+
+ubuntu镜像
+http://mirrors.163.com/ubuntu-releases/precise/
+
+ubuntu-12.04.4-desktop-i386.iso    
+需要1G以上内存
+sudo uname --m
+查看系统是32位还是64位
+如果显示i686,你安装了32位操作系统
+如果显示 x86_64，你安装了64位操作系统
+
+step 1
+apt-get install curl
+sudo apt-get install autoconf automake libtool git
+apt-get install build-essential unzip zip zlib1g-dev gawk gperf cmake 
+sudo apt-get install openjdk-6-jdk
+以下两个可以不需要安装
+apt-get install gcc-4.4
+apt-get install g++-4.4
+
+step 2: 下载SDK,NDK
+http://developer.android.com/sdk
+
+http://developer.android.com/tools/sdk/ndk/ 
+
+step 3: Extracted SDK & NDK and put in /opt/ as
+i. /opt/android-ndk-r10d
+ii. /opt/android-sdk-linux
+如果NDK是bin文件则那以下类似命令操作安装
+{ndk$ chmod a+x android-ndk-r10c-darwin-x86_64.bin
+ndk$ ./android-ndk-r10c-darwin-x86_64.bin}
+
+step 4: 
+ # cd <android-sdk>/tools
+ 下边这一条命令可以不用执行
+ # ./android update sdk -u -t platform,platform-tool
+
+ # ./android update sdk
+选择安装Andrid SDK Tools ,Android SDK Platform-tools ,Android-SDK Build-tools(21.1.2最新的)，SDK Platform (4.0版本 Android-14),Android Support library (21.0.3)
+
+step 5: 
+cd /opt/android-ndk-r10d
+ls platforms
+cd build/tools
+./make-standalone-toolchain.sh --ndk-dir=../../ --install-dir=../../../android-toolchain/android-14 --platform=android-14 --toolchain=arm-linux-androideabi-4.8
+
+step 6: 
+# keytool -genkey -keystore ~/.android/debug.keystore -v -alias \
+      androiddebugkey -dname "CN=Android Debug,O=Android,C=US" -keypass \
+      android -storepass android -keyalg RSA -keysize 2048 -validity 10000
+
+step 7: 
+# cd $HOME
+   # git clone git://github.com/xbmc/xbmc.git kodi-android
+   # cd kodi-android
+   # git submodule update --init addons/skin.re-touched
+
+# cd $HOME/kodi-android/tools/depends
+
+ "git clean -xfd ." inside "tools/depends"
+	#git clean -xfd . 这条可以清除，首次编译不需要执行，
+   # ./bootstrap
+   # ./configure --help
+   以下这条命令中间不要换行否则可能会出错
+   # ./configure --with-tarballs=/opt/xbmc-tarballs --host=arm-linux-androideabi --with-sdk-path=/opt/android-sdk-linux --with-ndk=/opt/android-ndk-r10d --with-toolchain=/opt/arm-linux-androideabi-4.8-vanilla/android-14 --prefix=/opt/xbmc-depends
+
+step 8:
+ make -j
+
+ # cd $HOME/kodi-android
+   # make -C tools/depends/target/xbmc
+   # make
+   # make apk
+
