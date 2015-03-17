@@ -5,6 +5,9 @@ layout_sat_setup_hd.h (apps\navi_ui\ui_blue\appgen\hd_s_mirror):        <Text na
 弹出框直接修改对应的坐标
 修改菜单项的背景颜色，实现屏蔽功能
 
+2.修改网络菜单
+去掉proxy setting
+
 2015/03/18
 1.调试加密flash
 2.调试特殊功能
