@@ -1,0 +1,7 @@
+2015/03/17
+1.去掉Tuner No/unicable/
+layout_sat_setup_hd.h (apps\navi_ui\ui_blue\appgen\hd_s_mirror):        <Text name="UIText_Opt_10_Val"
+此文件待整理，
+弹出框直接修改对应的坐标
+修改菜单项的背景颜色，实现屏蔽功能
+
