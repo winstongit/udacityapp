@@ -6,7 +6,18 @@ layout_sat_setup_hd.h (apps\navi_ui\ui_blue\appgen\hd_s_mirror):        <Text na
 修改菜单项的背景颜色，实现屏蔽功能
 
 2.修改网络菜单
-去掉proxy setting
+去掉proxy setting等菜单和字符串，修改颜色
+
+MSG_PROXY_SETTING
+MSG_SERVER_ADDRESS
+MSG_SAT2IP_MODE
+MSG_RTP_TRANSFER
+MSG_RTP_URL
+
+去掉bgImage
+BITMAP_OPTION_BG_F
+BITMAP_OPTION_BG
+
 
 2015/03/18
 1.调试加密flash
