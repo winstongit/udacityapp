@@ -30,7 +30,8 @@ BITMAP_OPTION_BG
 高亮 深蓝  0x88ab
 
 字体 白色  0xf39c
-太亮 换成  0xc210
+太亮 换成  0xc210 还是太亮
+灰白 0xe739
 字体 黑色  0x8000
 
 老背景 浅蓝  0x8174
@@ -77,6 +78,6 @@ UIText_Opt_10_Name MSG_TUNERNO
 5.程序大小
 之前程序大小 3.10 MB (3,256,320 字节)
 现在程序大小 3.09 MB (3,244,032 字节)
-
-
 BITMAP_TVSCAN_ICON
+
+6.close multi sat scan select
