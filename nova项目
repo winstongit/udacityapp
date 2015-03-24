@@ -18,7 +18,6 @@ MSG_RTP_URL
 BITMAP_OPTION_BG_F
 BITMAP_OPTION_BG
 
-
 2015/03/18
 1.调试加密flash
 2.调试特殊功能
@@ -26,7 +25,6 @@ BITMAP_OPTION_BG
 2015/03/19
 1.修改antenna setting菜单
 颜色：
-
 title 蓝色 0x806c
 背景 淡灰  0xb5f2
 高亮 深蓝  0x88ab
@@ -38,7 +36,6 @@ title 蓝色 0x806c
 
 老背景 浅蓝  0x8174
 老高亮 淡蓝  0xa637
-
 普通 墨绿  0x8108
 
 信号条 背景 0x8484 
@@ -58,7 +55,6 @@ BITMAP_OPTION_BG
 3.去掉位图：
 BITMAP_HEADER_C
 其他位图待删除
-
 
 2015/03/20
 1.修改所有卫星设置菜单颜色
@@ -80,10 +76,11 @@ UIText_Opt_10_Name MSG_TUNERNO
 5.程序大小
 之前程序大小 3.10 MB (3,256,320 字节)
 现在程序大小 3.09 MB (3,244,032 字节)
+最新程序大小 3.08 MB (3235840 字节)
+
 BITMAP_TVSCAN_ICON
 
 6.close multi sat scan select
-
 
 2015/03/21
 1._satsetup_updat_motor_text
@@ -138,3 +135,7 @@ MID_DB_GetServFav
 osdShowSrvList
 
 getSrvListInfoBySatSrvGroup
+
+
+2015/03/26
+1.尽快处理new的服务器协议验证
