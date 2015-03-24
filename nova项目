@@ -119,3 +119,22 @@ title
 主菜单背景 蓝色 0x9970
 主菜单背景 淡灰 0xb5f2
 主菜单不激活项  0xad6b
+
+有关fav的问题
+saveListServiceFav
+MID_DB_GetServFav
+db_GetServiceFav
+DBMS_ReadExtraSrvInfo
+
+MID_DB_ModiOneServ
+
+DBMS_ServiceUpdate
+
+MSCUS_SrvRamToNvm
+
+DBFS_InfoWrite(EN_SRV_TABLE, stSrvRel.u16LogicAddress, (u8*)&stSrvDetail);
+
+MID_DB_GetServFav
+osdShowSrvList
+
+getSrvListInfoBySatSrvGroup
