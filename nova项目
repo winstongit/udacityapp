@@ -103,3 +103,18 @@ EN_RESOLUTION_PAL_576I
 改成默认hdmi的参数
 EN_RESOLUTION_PAL_1080P_50HZ
 EN_PLAT_VOUT_TIMING_1080P50
+
+2.所有的弹出框
+title
+
+背景 白色 0xe739
+字体 黑色 0x8000
+
+背景 淡蓝  0xa637
+高亮 深蓝  0x88ab
+
+字体 灰色  0xa94a（0xb9ce）
+字体 白色  0xe739
+
+主菜单背景 蓝色 0x9970
+主菜单背景 淡灰 0xb5f2
