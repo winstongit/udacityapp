@@ -139,6 +139,12 @@ getSrvListInfoBySatSrvGroup
 
 2015/03/25
 1.fav功能完善
+分析节目管理
+HS_EVENT_FAV
+获取节目表
+APP_SrvSwitch_GetSrvGroupInfo
+
+
 2.pt菜单完善
 3.dm完善
 4.南美sk
