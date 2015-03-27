@@ -144,10 +144,14 @@ HS_EVENT_FAV
 获取节目表
 APP_SrvSwitch_GetSrvGroupInfo
 
-
 2.pt菜单完善
 3.dm完善
 4.南美sk
 
 2015/03/26
 1.尽快处理new的协议验证
+有事无法处理
+2.fav处理完
+osdShowFavChList
+3.
+
